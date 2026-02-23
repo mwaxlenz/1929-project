@@ -3,159 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The 1929 Project</title>
+<title>The 1929 Project — Architects of the Great Crash</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#F5F0E8;--cream-dark:#EDE6D6;--ink:#1A1A1A;--ink-light:#3D3530;--ink-muted:#7A6E62;--gold:#B8960C;--gold-light:#D4AE14;--font-display:"Playfair Display","Libre Baskerville",Georgia,serif;--font-serif:"Libre Baskerville",Georgia,serif;--font-sans:"Source Sans 3","Helvetica Neue",sans-serif;--tr:0.25s cubic-bezier(.4,0,.2,1)}
+:root{--cream:#F5F0E8;--cream-dark:#EDE6D6;--ink:#1A1A1A;--ink-light:#3D3530;--ink-muted:#7A6E62;--gold:#B8960C;--gold-light:#D4AE14;--gold-dim:rgba(184,150,12,0.15);--shadow-card:0 2px 12px rgba(26,26,26,0.10),0 1px 3px rgba(26,26,26,0.08);--shadow-hover:0 8px 32px rgba(26,26,26,0.18),0 2px 8px rgba(26,26,26,0.10);--font-display:'Playfair Display','Libre Baskerville',Georgia,serif;--font-serif:'Libre Baskerville',Georgia,serif;--font-sans:'Source Sans 3','Helvetica Neue',sans-serif;--transition:0.25s cubic-bezier(0.4,0,0.2,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--cream);color:var(--ink);font-family:var(--font-sans);line-height:1.6}
-.ticker-wrap{background:var(--ink);color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:7px 0;overflow:hidden;position:relative}
-.ticker-wrap::before,.ticker-wrap::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2}
+body{background-color:var(--cream);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;min-height:100vh}
+.ticker-wrap{background:var(--ink);color:var(--gold);font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:7px 0;overflow:hidden;position:relative}
+.ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2}
 .ticker-wrap::before{left:0;background:linear-gradient(to right,var(--ink),transparent)}
 .ticker-wrap::after{right:0;background:linear-gradient(to left,var(--ink),transparent)}
-.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:ticker 50s linear infinite}
-.ticker-track span{padding:0 28px;border-right:1px solid rgba(184,150,12,.3)}
+.ticker-track{display:flex;gap:0;animation:ticker 60s linear infinite;white-space:nowrap;width:max-content}
+.ticker-track span{padding:0 28px;border-right:1px solid rgba(184,150,12,0.3)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .masthead{text-align:center;padding:56px 24px 40px;max-width:900px;margin:0 auto}
-.masthead-eyebrow{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:20px}
-.masthead h1{font-family:var(--font-display);font-size:clamp(42px,8vw,96px);font-weight:900;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:6px}
-.masthead h1 span{display:block;font-size:clamp(14px,2vw,22px);font-weight:400;font-style:italic;letter-spacing:.05em;color:var(--gold);text-transform:none;margin-bottom:4px}
-.masthead-sub{font-family:var(--font-serif);font-size:clamp(13px,1.8vw,17px);font-style:italic;color:var(--ink-muted);line-height:1.5;max-width:700px;margin:18px auto 28px}
+.masthead-eyebrow{font-family:var(--font-sans);font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:20px}
+.masthead h1{font-family:var(--font-display);font-size:clamp(42px,8vw,96px);font-weight:900;line-height:0.95;letter-spacing:-0.02em;color:var(--ink);text-transform:uppercase;margin-bottom:6px}
+.masthead h1 span{display:block;font-size:clamp(14px,2vw,22px);font-weight:400;font-style:italic;letter-spacing:0.05em;color:var(--gold);text-transform:none;margin-bottom:4px}
+.masthead-subtitle{font-family:var(--font-serif);font-size:clamp(13px,1.8vw,17px);font-style:italic;color:var(--ink-muted);line-height:1.5;max-width:700px;margin:18px auto 28px}
 .masthead-rule{display:flex;align-items:center;gap:16px;margin:28px 0 22px}
-.masthead-rule::before,.masthead-rule::after{content:"";flex:1;height:3px;background:var(--ink)}
-.date-cap{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted);padding:3px 12px;border:1px solid var(--ink-muted)}
+.masthead-rule::before,.masthead-rule::after{content:'';flex:1;height:3px;background:var(--ink)}
+.masthead-rule-inner{display:flex;flex-direction:column;align-items:center;gap:3px}
+.masthead-rule-inner .thin-rule{width:200px;height:1px;background:var(--ink)}
+.masthead-rule-inner .date-cap{font-family:var(--font-sans);font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-muted);padding:3px 12px;border:1px solid var(--ink-muted)}
 .masthead-intro{font-family:var(--font-serif);font-size:15px;line-height:1.75;color:var(--ink-light);max-width:660px;margin:0 auto;text-align:left}
-.masthead-intro::first-letter{font-size:3.5em;font-family:var(--font-display);font-weight:900;float:left;line-height:.8;margin-right:6px;margin-top:6px;color:var(--gold)}
-.filter-bar{position:sticky;top:0;z-index:100;background:var(--ink);padding:14px 24px;box-shadow:0 2px 16px rgba(0,0,0,.25)}
-.filter-inner{max-width:1400px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.masthead-intro::first-letter{font-size:3.5em;font-family:var(--font-display);font-weight:900;float:left;line-height:0.8;margin-right:6px;margin-top:6px;color:var(--gold)}
+.filter-bar{position:sticky;top:0;z-index:100;background:var(--ink);padding:14px 24px;box-shadow:0 2px 16px rgba(26,26,26,0.25)}
+.filter-bar-inner{max-width:1400px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .filter-search{flex:1;min-width:200px;position:relative}
-.filter-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);pointer-events:none;opacity:.5}
-.filter-search input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:2px;color:var(--cream);font-family:var(--font-sans);font-size:13px;padding:8px 12px 8px 36px;outline:none}
-.filter-search input::placeholder{color:rgba(245,240,232,.4)}
+.filter-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:0.5;pointer-events:none}
+.filter-search input{width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:2px;color:var(--cream);font-family:var(--font-sans);font-size:13px;padding:8px 12px 8px 36px;outline:none;transition:border-color var(--transition)}
+.filter-search input::placeholder{color:rgba(245,240,232,0.4)}
 .filter-search input:focus{border-color:var(--gold)}
-.filter-select{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:2px;color:var(--cream);font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:8px 28px 8px 12px;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F5F0E8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;min-width:160px}
+.filter-select{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:2px;color:var(--cream);font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;padding:8px 28px 8px 12px;outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F5F0E8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;transition:border-color var(--transition);min-width:160px}
 .filter-select:focus{border-color:var(--gold)}
-.filter-select option{background:var(--ink)}
-.filter-clear{background:none;border:1px solid rgba(184,150,12,.5);border-radius:2px;color:var(--gold);font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;cursor:pointer}
-.filter-clear:hover{background:var(--gold);color:var(--ink)}
+.filter-select option{background:var(--ink);color:var(--cream)}
+.filter-clear-btn{background:none;border:1px solid rgba(184,150,12,0.5);border-radius:2px;color:var(--gold);font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:8px 14px;cursor:pointer;transition:all var(--transition);white-space:nowrap}
+.filter-clear-btn:hover{background:var(--gold);color:var(--ink)}
 .filter-meta{max-width:1400px;margin:0 auto;padding:8px 24px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
-.filter-count{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.5)}
-.pill{display:inline-flex;align-items:center;gap:5px;background:rgba(184,150,12,.15);border:1px solid var(--gold);border-radius:2px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;cursor:pointer}
-.pill:hover{background:var(--gold);color:var(--ink)}
-.gallery{max-width:1400px;margin:0 auto;padding:40px 24px 80px}
-.grid{column-count:1;column-gap:24px}
-@media(min-width:640px){.grid{column-count:2}}
-@media(min-width:1024px){.grid{column-count:3}}
-@media(min-width:1280px){.grid{column-count:4}}
+.filter-count{font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,240,232,0.5)}
+.active-pill{display:inline-flex;align-items:center;gap:6px;background:var(--gold-dim);border:1px solid var(--gold);border-radius:2px;color:var(--gold);font-family:var(--font-sans);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;cursor:pointer;transition:all var(--transition)}
+.active-pill:hover{background:var(--gold);color:var(--ink)}
+.active-pill .pill-x{font-size:13px;line-height:1}
+.gallery-section{max-width:1400px;margin:0 auto;padding:40px 24px 80px}
+.gallery-grid{column-count:1;column-gap:24px}
+@media(min-width:640px){.gallery-grid{column-count:2}}
+@media(min-width:1024px){.gallery-grid{column-count:3}}
+@media(min-width:1280px){.gallery-grid{column-count:4}}
 .card-wrap{break-inside:avoid;margin-bottom:24px}
-.card{background:#FDFAF4;border:1px solid rgba(26,26,26,.1);box-shadow:0 2px 12px rgba(26,26,26,.1);cursor:pointer;position:relative;opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s,box-shadow var(--tr)}
-.card.show{opacity:1;transform:translateY(0)}
-.card:hover{box-shadow:0 8px 32px rgba(26,26,26,.18);transform:translateY(-3px)}
-.card.open{box-shadow:0 8px 32px rgba(26,26,26,.18);cursor:default}
-.card.open:hover{transform:none}
+.card{background:#FDFAF4;border:1px solid rgba(26,26,26,0.1);box-shadow:var(--shadow-card);cursor:pointer;position:relative;transition:box-shadow var(--transition),transform var(--transition);opacity:0;transform:translateY(20px)}
+.card.visible{opacity:1;transform:translateY(0);transition:opacity 0.5s ease,transform 0.5s ease,box-shadow var(--transition)}
+.card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.card.expanded{box-shadow:var(--shadow-hover);cursor:default}
 .card-portrait{position:relative;height:200px;overflow:hidden;background:var(--ink)}
-.card-portrait img{width:100%;height:100%;object-fit:cover;object-position:top;filter:sepia(60%) contrast(1.05) brightness(.9);transition:filter var(--tr),transform .4s;display:block}
-.card:hover .card-portrait img{filter:sepia(30%) brightness(1);transform:scale(1.03)}
-.mono{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2A2318,#1A1A14,#2A2010)}
-.mono-letter{font-family:var(--font-display);font-size:72px;font-weight:900;color:rgba(184,150,12,.3);line-height:1}
-.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(26,26,26,.6) 100%);pointer-events:none}
-.cat-pill{position:absolute;top:12px;left:12px;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;padding:3px 8px;border-radius:1px;z-index:2}
-.feat-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--ink);font-size:7px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;padding:3px 6px;z-index:2}
+.card-portrait img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:sepia(60%) contrast(1.05) brightness(0.9);transition:filter var(--transition),transform 0.4s ease;display:block}
+.card:hover .card-portrait img{filter:sepia(30%) contrast(1.05) brightness(1.0);transform:scale(1.02)}
+.card-portrait-mono{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2A2318 0%,#1A1A14 50%,#2A2010 100%)}
+.card-portrait-mono-letter{font-family:var(--font-display);font-size:72px;font-weight:900;color:rgba(184,150,12,0.3);line-height:1;text-transform:uppercase;user-select:none}
+.portrait-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(26,26,26,0.6) 100%);pointer-events:none}
+.card-category-pill{position:absolute;top:12px;left:12px;font-family:var(--font-sans);font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#fff;padding:3px 8px;border-radius:1px;z-index:2}
+.featured-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--ink);font-family:var(--font-sans);font-size:7px;font-weight:900;letter-spacing:0.2em;text-transform:uppercase;padding:3px 6px;z-index:2}
 .card-body{padding:18px 18px 14px}
-.card-name{font-family:var(--font-display);font-size:19px;font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:4px;transition:color var(--tr)}
+.card-name{font-family:var(--font-display);font-size:19px;font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:4px;transition:color var(--transition)}
 .card:hover .card-name{color:var(--gold)}
-.card.open .card-name{color:var(--ink)}
-.card-role{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px}
+.card.expanded .card-name{color:var(--ink)}
+.card-role{font-family:var(--font-sans);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px}
 .card-teaser{font-family:var(--font-serif);font-size:12.5px;font-style:italic;line-height:1.55;color:var(--ink-light);margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.media-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.mi{font-size:11px;color:var(--ink-muted)}
-.mi.on{color:var(--gold)}
-.card-cta{display:block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border-top:1px solid rgba(26,26,26,.08);padding-top:10px;background:none;border-bottom:none;border-left:none;border-right:none;cursor:pointer;text-align:left;width:100%;transition:letter-spacing var(--tr)}
-.card:hover .card-cta{letter-spacing:.22em}
-.card.open .card-cta{display:none}
-.card-exp{display:none;border-top:2px solid var(--gold)}
-.card.open .card-exp{display:block}
-.exp-inner{padding:24px 22px 28px}
-.exp-hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:20px}
-.exp-hdr-left{flex:1;min-width:0}
-.exp-name{font-family:var(--font-display);font-size:22px;font-weight:700;line-height:1.15;margin-bottom:4px}
-.exp-role{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:6px}
-.exp-pages{font-family:var(--font-serif);font-size:11px;font-style:italic;color:var(--ink-muted)}
-.exp-pages b{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-right:4px;font-family:var(--font-sans)}
-.close-btn{background:none;border:1px solid rgba(26,26,26,.2);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink-muted);font-size:16px;flex-shrink:0;transition:all var(--tr)}
-.close-btn:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
-.sec{margin-bottom:20px}
-.sec-label{font-size:8.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-muted);border-bottom:1px solid rgba(26,26,26,.12);padding-bottom:5px;margin-bottom:12px}
-.bio-short{font-family:var(--font-serif);font-size:13px;line-height:1.7;color:var(--ink-light)}
-.bio-ext{font-family:var(--font-serif);font-size:13px;line-height:1.7;color:var(--ink-light);display:none;margin-top:10px}
-.bio-ext.open{display:block}
-.bio-ext p{margin-bottom:10px}
-.bio-ext p:last-child{margin-bottom:0}
-.bio-toggle{background:none;border:none;cursor:pointer;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:8px;padding:0;display:block}
+.card-media-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.media-indicator{font-size:11px;color:var(--ink-muted);display:flex;align-items:center;gap:3px;font-family:var(--font-sans)}
+.media-indicator.available{color:var(--gold)}
+.card-cta{display:block;font-family:var(--font-sans);font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border-top:1px solid rgba(26,26,26,0.08);padding-top:10px;transition:letter-spacing var(--transition);background:none;border-bottom:none;border-left:none;border-right:none;cursor:pointer;text-align:left;width:100%}
+.card:hover .card-cta{letter-spacing:0.22em}
+.card-expanded{display:none;border-top:2px solid var(--gold);background:#FDFAF4}
+.card.expanded .card-cta{display:none}
+.card.expanded .card-expanded{display:block}
+.expanded-inner{padding:24px 22px 28px}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;gap:12px}
+.exp-header-left{flex:1;min-width:0}
+.exp-name{font-family:var(--font-display);font-size:22px;font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:4px}
+.exp-role{font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:8px}
+.exp-page-ref{font-family:var(--font-serif);font-size:11px;font-style:italic;color:var(--ink-muted)}
+.exp-page-ref strong{font-style:normal;font-family:var(--font-sans);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-right:4px}
+.exp-close{background:none;border:1px solid rgba(26,26,26,0.2);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;color:var(--ink-muted);font-size:16px;transition:all var(--transition)}
+.exp-close:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.exp-section{margin-bottom:20px}
+.exp-section-label{font-family:var(--font-sans);font-size:8.5px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-muted);border-bottom:1px solid rgba(26,26,26,0.12);padding-bottom:5px;margin-bottom:12px}
+.exp-bio-short{font-family:var(--font-serif);font-size:13px;line-height:1.7;color:var(--ink-light)}
+.exp-bio-extended{font-family:var(--font-serif);font-size:13px;line-height:1.7;color:var(--ink-light);display:none;margin-top:10px}
+.exp-bio-extended p{margin-bottom:10px}
+.exp-bio-extended p:last-child{margin-bottom:0}
+.exp-bio-extended.open{display:block}
+.bio-toggle{background:none;border:none;cursor:pointer;font-family:var(--font-sans);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-top:8px;padding:0;display:block;transition:color var(--transition)}
 .bio-toggle:hover{color:var(--gold-light)}
-.audio-block{background:var(--cream-dark);border:1px solid rgba(26,26,26,.08);padding:14px;margin-bottom:10px}
-.audio-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.audio-title{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted)}
-.audio-dur{font-family:"Courier New",monospace;font-size:10px;color:var(--ink-muted)}
+.audio-block{background:var(--cream-dark);border:1px solid rgba(26,26,26,0.08);padding:14px;margin-bottom:10px}
+.audio-block-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.audio-block-title{font-family:var(--font-sans);font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-muted)}
+.audio-duration{font-family:'Courier New',monospace;font-size:10px;color:var(--ink-muted)}
 .audio-desc{font-family:var(--font-serif);font-size:11px;font-style:italic;color:var(--ink-muted);margin-bottom:10px;line-height:1.5}
-.audio-ui{display:flex;align-items:center;gap:10px}
-.play-btn{background:var(--ink);border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--cream);flex-shrink:0;transition:background var(--tr),transform var(--tr)}
-.play-btn:hover{background:var(--gold);transform:scale(1.08)}
-.progress-wrap{flex:1;height:4px;background:rgba(26,26,26,.15);border-radius:2px;cursor:pointer;position:relative}
-.progress-fill{height:100%;background:var(--ink);border-radius:2px;width:0;pointer-events:none}
-.progress-dot{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none}
-.audio-time{font-family:"Courier New",monospace;font-size:10px;color:var(--ink-muted);white-space:nowrap;flex-shrink:0}
-.placeholder-block{background:var(--cream-dark);border:1px dashed rgba(26,26,26,.15);padding:14px;text-align:center;margin-bottom:10px}
-.placeholder-block p{font-family:var(--font-serif);font-size:12px;font-style:italic;color:var(--ink-muted)}
-.pptx-block{background:var(--cream-dark);border:1px solid rgba(26,26,26,.08);padding:14px;display:flex;gap:14px;align-items:center}
-.pptx-thumb{width:80px;height:60px;background:var(--ink);flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:28px;color:rgba(245,240,232,.3)}
+.audio-player-ui{display:flex;align-items:center;gap:10px}
+.audio-play-btn{background:var(--ink);border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;color:var(--cream);transition:background var(--transition),transform var(--transition)}
+.audio-play-btn:hover{background:var(--gold);transform:scale(1.08)}
+.audio-progress-wrap{flex:1;position:relative;height:4px;background:rgba(26,26,26,0.15);border-radius:2px;cursor:pointer}
+.audio-progress-fill{height:100%;background:var(--ink);border-radius:2px;width:0%;pointer-events:none}
+.audio-scrubber{position:absolute;top:50%;left:0%;transform:translate(-50%,-50%);width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none}
+.audio-time{font-family:'Courier New',monospace;font-size:10px;color:var(--ink-muted);white-space:nowrap;flex-shrink:0}
+.audio-placeholder,.pptx-placeholder{background:var(--cream-dark);border:1px dashed rgba(26,26,26,0.15);padding:14px;text-align:center}
+.audio-placeholder p,.pptx-placeholder p{font-family:var(--font-serif);font-size:12px;font-style:italic;color:var(--ink-muted)}
+.pptx-block{background:var(--cream-dark);border:1px solid rgba(26,26,26,0.08);padding:14px;display:flex;gap:14px;align-items:center}
+.pptx-thumb{width:80px;height:60px;background:var(--ink);flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .pptx-thumb img{width:100%;height:100%;object-fit:cover}
+.pptx-thumb-placeholder{color:rgba(245,240,232,0.3);font-size:28px}
 .pptx-info{flex:1;min-width:0}
-.pptx-title-t{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px;line-height:1.3}
-.pptx-meta{font-size:10px;color:var(--ink-muted);margin-bottom:8px}
+.pptx-title-text{font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px;line-height:1.3}
+.pptx-meta{font-family:var(--font-sans);font-size:10px;color:var(--ink-muted);margin-bottom:8px}
 .pptx-links{display:flex;gap:10px;flex-wrap:wrap}
-.pptx-link{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.pptx-link{font-family:var(--font-sans);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:color var(--transition)}
 .pptx-link:hover{color:var(--gold-light);text-decoration:underline}
 .ext-links{display:flex;flex-direction:column;gap:8px}
-.ext-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-serif);font-size:13px;color:var(--ink-light);text-decoration:none;border-bottom:1px solid rgba(26,26,26,.15);padding-bottom:8px;transition:color var(--tr),border-color var(--tr)}
+.ext-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-serif);font-size:13px;color:var(--ink-light);text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15);padding-bottom:8px;transition:color var(--transition),border-color var(--transition)}
 .ext-link:last-child{border-bottom:none;padding-bottom:0}
 .ext-link:hover{color:var(--gold);border-color:var(--gold)}
-.ext-icon{width:16px;height:16px;opacity:.6;flex-shrink:0}
-.site-footer{background:var(--ink);color:rgba(245,240,232,.6);padding:48px 24px;text-align:center}
+.ext-link-icon{width:16px;height:16px;opacity:0.6}
+.site-footer{background:var(--ink);color:rgba(245,240,232,0.6);padding:48px 24px;text-align:center}
 .footer-inner{max-width:700px;margin:0 auto}
-.footer-title{font-family:var(--font-display);font-size:24px;font-weight:900;color:var(--cream);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
-.footer-tag{font-family:var(--font-serif);font-size:12px;font-style:italic;color:var(--gold);margin-bottom:20px}
-.footer-hr{border:none;border-top:1px solid rgba(245,240,232,.1);margin:20px 0}
-.footer-body{font-size:12px;line-height:1.8}
+.footer-title{font-family:var(--font-display);font-size:24px;font-weight:900;color:var(--cream);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:6px}
+.footer-tagline{font-family:var(--font-serif);font-size:12px;font-style:italic;color:var(--gold);margin-bottom:20px}
+.footer-rule{border:none;border-top:1px solid rgba(245,240,232,0.1);margin:20px 0}
+.footer-body{font-family:var(--font-sans);font-size:12px;line-height:1.8}
 .footer-body a{color:var(--gold);text-decoration:none}
 .footer-body a:hover{text-decoration:underline}
-.footer-date{font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:16px;color:rgba(245,240,232,.3)}
+.footer-updated{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-top:16px;color:rgba(245,240,232,0.3)}
 .no-results{text-align:center;padding:60px 20px;font-family:var(--font-serif);font-style:italic;color:var(--ink-muted);font-size:16px;column-span:all}
-.loading-msg{text-align:center;padding:60px 20px;font-family:var(--font-serif);font-style:italic;color:var(--ink-muted);font-size:16px}
-.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border:1px solid rgba(26,26,26,.1)}
-.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-@media(max-width:640px){.masthead{padding:36px 16px 28px}.filter-bar{padding:10px 16px}.filter-select{min-width:120px}}
+@media(max-width:640px){.masthead{padding:36px 16px 28px}.filter-bar{padding:10px 16px}.filter-select{min-width:130px}.gallery-section{padding:24px 16px 60px}}
 </style>
 </head>
 <body>
 <div class="ticker-wrap" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></div>
-<header class="masthead">
+<header class="masthead" role="banner">
   <p class="masthead-eyebrow">An Historical Register &bull; Est. 2026</p>
   <h1><span>The</span>1929 Project</h1>
-  <p class="masthead-sub">Architects of the Great Crash &mdash; A Register of the Figures Who Built, Profited From, and Survived the Collapse</p>
-  <div class="masthead-rule" aria-hidden="true"><div class="date-cap">October 29, 1929 &mdash; Black Tuesday</div></div>
-  <p class="masthead-intro">In the autumn of 1929, the architecture of American finance collapsed in a matter of days. This register documents the bankers, politicians, speculators, and reformers whose decisions &mdash; reckless, brilliant, catastrophic, and consequential &mdash; shaped one of history&rsquo;s defining economic disasters. The names gathered here are not merely historical curiosities; they are the architects of conditions whose consequences echoed across a decade of mass suffering.</p>
+  <p class="masthead-subtitle">Architects of the Great Crash — A Register of the Figures Who Built, Profited From, and Survived the Collapse</p>
+  <div class="masthead-rule" aria-hidden="true">
+    <div class="masthead-rule-inner">
+      <div class="thin-rule"></div>
+      <div class="date-cap">October 29, 1929 — Black Tuesday</div>
+      <div class="thin-rule"></div>
+    </div>
+  </div>
+  <p class="masthead-intro">In the autumn of 1929, the architecture of American finance collapsed in a matter of days. This register documents the bankers, politicians, speculators, and reformers whose decisions — reckless, brilliant, catastrophic, and consequential — shaped one of history's defining economic disasters. The names gathered here are not merely historical curiosities; they are the architects of conditions whose consequences echoed across a decade of mass suffering.</p>
 </header>
-<div class="filter-bar">
-  <div class="filter-inner">
+<div class="filter-bar" role="search" aria-label="Filter figures">
+  <div class="filter-bar-inner">
     <div class="filter-search">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="4.5" stroke="#F5F0E8" stroke-width="1.5"/><path d="M9.5 9.5L12.5 12.5" stroke="#F5F0E8" stroke-width="1.5" stroke-linecap="round"/></svg>
-      <input type="text" id="searchInput" placeholder="Search by name, role, institution..." autocomplete="off">
+      <input type="text" id="searchInput" placeholder="Search by name, role, institution…" aria-label="Search figures" autocomplete="off">
     </div>
-    <select class="filter-select" id="catFilter">
+    <select class="filter-select" id="categoryFilter" aria-label="Filter by category">
       <option value="">All Categories</option>
       <option>Banker</option>
       <option>Politician / Regulator</option>
@@ -165,7 +171,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--font-sans);line-
       <option>Reformer / Investigator</option>
       <option>Other</option>
     </select>
-    <select class="filter-select" id="instFilter">
+    <select class="filter-select" id="institutionFilter" aria-label="Filter by institution">
       <option value="">All Institutions</option>
       <option>J.P. Morgan &amp; Co.</option>
       <option>National City Bank</option>
@@ -176,317 +182,56 @@ body{background:var(--cream);color:var(--ink);font-family:var(--font-sans);line-
       <option>Independent</option>
       <option>Other</option>
     </select>
-    <button class="filter-clear" id="clearBtn">&times; Clear</button>
+    <button class="filter-clear-btn" id="clearBtn" aria-label="Clear all filters">&#x2715; Clear</button>
   </div>
   <div class="filter-meta">
     <span class="filter-count" id="filterCount"></span>
-    <div id="pills"></div>
+    <div id="activePills"></div>
   </div>
 </div>
-<main class="gallery"><div class="grid" id="grid"><p class="loading-msg">Loading register&hellip;</p></div></main>
-<footer class="site-footer">
+<main class="gallery-section" aria-label="Figures gallery">
+  <div class="gallery-grid" id="galleryGrid" role="list">
+    <p class="no-results" id="loadingMsg">Loading register&#8230;</p>
+  </div>
+</main>
+<footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-title">The 1929 Project</div>
-    <div class="footer-tag">Architects of the Great Crash</div>
-    <hr class="footer-hr">
+    <div class="footer-tagline">Architects of the Great Crash</div>
+    <hr class="footer-rule">
     <div class="footer-body">
-      <p>Data sourced from the 1929 Project research index. Audio descriptions generated via Google NotebookLM.</p>
-      <p style="margin-top:10px">A project of <em>[Organization Name]</em> &bull; <a href="/cdn-cgi/l/email-protection#33505c5d4752504773020a010a43415c595650471d5c4154"><span class="__cf_email__" data-cfemail="e784888993868493a7d6ded5de9795888d828493c9889580">[email&#160;protected]</span></a></p>
+      <p>Data sourced from the 1929 Project research index.<br>Audio descriptions generated via Google NotebookLM.</p>
+      <p style="margin-top:10px">A project of <em>[Organization Name]</em> &bull; <a href="mailto:contact@1929project.org">contact@1929project.org</a></p>
     </div>
-    <div class="footer-date">Last updated: February 2026</div>
+    <div class="footer-updated" id="footerDate"></div>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-"use strict";
-var TICKER=["Oct 24, 1929 \u2014 Black Thursday","Oct 28, 1929 \u2014 Dow falls 12.8%","Oct 29, 1929 \u2014 Black Tuesday","Nov 13, 1929 \u2014 Market bottom","Mar 1929 \u2014 Mitchell defies Federal Reserve","Jun 1932 \u2014 Market reaches Depression low","Mar 1933 \u2014 Bank Holiday declared","Jun 1933 \u2014 Glass-Steagall enacted","1934 \u2014 Securities Exchange Act","1935 \u2014 Social Security Act","Apr 1932 \u2014 Pecora hearings begin","1932 \u2014 Unemployment reaches 25%","Nov 1932 \u2014 Roosevelt elected"];
-var CAT_COLORS={"Banker":{bg:"#8B6914"},"Politician / Regulator":{bg:"#1C3A5E"},"Speculator / Trader":{bg:"#5C2A2A"},"Industrialist / Executive":{bg:"#2A4A2A"},"Journalist / Intellectual":{bg:"#3D2A5C"},"Reformer / Investigator":{bg:"#1A4A3A"},"Other":{bg:"#4A3A2A"}};
-var all=[],filtered=[],expandedId=null,searchTimer=null,q="",cat="",inst="";
-
-function buildTicker(){
-  var t=document.getElementById("tickerTrack");
-  t.innerHTML=TICKER.concat(TICKER).map(function(s){return"<span>"+s+"</span>";}).join("");
-}
-
-function init(people){
-  buildTicker();
-  all=people.filter(function(p){return p.status==="published";});
-  all.sort(function(a,b){
-    if(a.featured&&!b.featured)return -1;
-    if(!a.featured&&b.featured)return 1;
-    return a.sort_name.localeCompare(b.sort_name);
-  });
-  filtered=all.slice();
-  render();
-  wireFilters();
-}
-
-function wireFilters(){
-  document.getElementById("searchInput").addEventListener("input",function(e){
-    clearTimeout(searchTimer);
-    var v=e.target.value;
-    searchTimer=setTimeout(function(){q=v.trim().toLowerCase();applyFilters();},300);
-  });
-  document.getElementById("catFilter").addEventListener("change",function(e){cat=e.target.value;applyFilters();});
-  document.getElementById("instFilter").addEventListener("change",function(e){inst=e.target.value;applyFilters();});
-  document.getElementById("clearBtn").addEventListener("click",function(){
-    document.getElementById("searchInput").value="";
-    document.getElementById("catFilter").value="";
-    document.getElementById("instFilter").value="";
-    q="";cat="";inst="";applyFilters();
-  });
-}
-
-function applyFilters(){
-  expandedId=null;
-  filtered=all.filter(function(p){
-    var mq=!q||p.full_name.toLowerCase().indexOf(q)>-1||p.category.toLowerCase().indexOf(q)>-1||p.institution.toLowerCase().indexOf(q)>-1||p.role_title.toLowerCase().indexOf(q)>-1;
-    return mq&&(!cat||p.category===cat)&&(!inst||p.institution===inst);
-  });
-  render();updateMeta();
-}
-
-function updateMeta(){
-  document.getElementById("filterCount").textContent="Showing "+filtered.length+" of "+all.length+" figures";
-  var pillsEl=document.getElementById("pills");
-  pillsEl.innerHTML="";
-  if(q)pillsEl.appendChild(mkPill('"'+q+'"',function(){document.getElementById("searchInput").value="";q="";applyFilters();}));
-  if(cat)pillsEl.appendChild(mkPill(cat,function(){document.getElementById("catFilter").value="";cat="";applyFilters();}));
-  if(inst)pillsEl.appendChild(mkPill(inst,function(){document.getElementById("instFilter").value="";inst="";applyFilters();}));
-}
-
-function mkPill(label,fn){
-  var b=document.createElement("button");b.className="pill";
-  b.innerHTML=label+" <span>\u00d7</span>";b.addEventListener("click",fn);return b;
-}
-
-function render(){
-  var grid=document.getElementById("grid");grid.innerHTML="";
-  if(!filtered.length){
-    var p=document.createElement("p");p.className="no-results";p.textContent="No figures match your filters.";grid.appendChild(p);updateMeta();return;
-  }
-  filtered.forEach(function(person){
-    var w=document.createElement("div");w.className="card-wrap";w.innerHTML=cardHTML(person);grid.appendChild(w);
-  });
-  updateMeta();reveal();wireCards();
-}
-
-function mono(name){
-  var pts=name.replace(/[^a-zA-Z\s]/g,"").trim().split(/\s+/);
-  return pts.length>=2?(pts[0][0]+pts[pts.length-1][0]).toUpperCase():pts[0][0].toUpperCase();
-}
-
-function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-
-function cardHTML(p){
-  var col=(CAT_COLORS[p.category]||CAT_COLORS["Other"]).bg;
-  var port=p.portrait_url?'<img src="'+esc(p.portrait_url)+'" alt="'+esc(p.portrait_alt)+'" loading="lazy">'
-    :'<div class="mono"><span class="mono-letter">'+mono(p.full_name)+'</span></div>';
-  var feat=p.featured?'<div class="feat-badge">Featured</div>':"";
-  var hS=!!p.audio_short_url,hE=!!p.audio_extended_url,hP=!!p.pptx_view_url,hW=!!p.wikipedia_url,hY=!!p.youtube_url;
-  var med='<div class="media-row">'
-    +'<span class="mi'+(hS?' on':'')+'">&#127911; Short</span>'
-    +'<span class="mi'+(hE?' on':'')+'">&#127911;&#127911; Ext.</span>'
-    +'<span class="mi'+(hP?' on':'')+'">&#128202; Slides</span>'
-    +(hW?'<span class="mi on">&#128279; Wiki</span>':"")
-    +(hY?'<span class="mi on">&#9654; Video</span>':"")
-    +'</div>';
-  return'<article class="card" data-id="'+p.id+'">'
-    +'<div class="card-portrait">'+port+'<div class="vignette"></div>'
-    +'<div class="cat-pill" style="background:'+col+'">'+esc(p.category)+'</div>'+feat+'</div>'
-    +'<div class="card-body">'
-    +'<h2 class="card-name">'+esc(p.full_name)+'</h2>'
-    +'<p class="card-role">'+esc(p.role_title)+'</p>'
-    +'<p class="card-teaser">'+esc(p.primary_historical_role)+'</p>'
-    +med+'<button class="card-cta">Read Profile &#8594;</button></div>'
-    +'<div class="card-exp">'+expHTML(p)+'</div></article>';
-}
-
-function expHTML(p){
-  var bio=p.bio_short||"<em>Biography coming soon.</em>";
-  var hasE=!!p.bio_extended;
-  var extP=hasE?p.bio_extended.split("\n\n").filter(function(s){return s.trim();}).map(function(s){return"<p>"+s.trim()+"</p>";}).join(""):"";
-  var bioT=hasE?'<div class="bio-ext" id="bext-'+p.id+'">'+extP+'</div><button class="bio-toggle" data-bid="'+p.id+'">Read more &#8595;</button>':"";
-  var pgs=p.page_references?'<div class="exp-pages"><b>Index pp.</b>'+esc(p.page_references)+'</div>':"";
-  return'<div class="exp-inner">'
-    +'<div class="exp-hdr"><div class="exp-hdr-left">'
-    +'<h3 class="exp-name">'+esc(p.full_name)+'</h3>'
-    +'<div class="exp-role">'+esc(p.role_title)+' &bull; '+esc(p.institution)+'</div>'
-    +pgs+'</div>'
-    +'<button class="close-btn" data-cid="'+p.id+'">\u00d7</button></div>'
-    +'<div class="sec"><div class="sec-label">Biography</div>'
-    +'<div class="bio-short">'+bio+'</div>'+bioT+'</div>'
-    +audioSec(p)+timelineSec(p)+videoSec(p)+extLinksHTML(p)+'</div>';
-}
-
-function audioSec(p){
-  if(!p.audio_short_url)return'<div class="sec"><div class="sec-label">Audio Description</div><div class="placeholder-block"><p>Audio description in production &mdash; check back soon.</p></div></div>';
-  return'<div class="sec"><div class="sec-label">Audio Description</div>'
-    +audioPlayer("short",p.id,p.audio_short_url,p.audio_short_duration,p.audio_short_description,"Short Version")
-    +'</div>';
-}
-
-function audioPlayer(type,pid,url,dur,desc,label){
-  var aid="aud-"+pid+"-"+type;
-  return'<div class="audio-block">'
-    +'<div class="audio-hdr"><span class="audio-title">'+label+'</span>'+(dur?'<span class="audio-dur">'+esc(dur)+'</span>':"")+'</div>'
-    +(desc?'<div class="audio-desc">'+esc(desc)+'</div>':"")
-    +'<div class="audio-ui">'
-    +'<button class="play-btn" data-aid="'+aid+'" aria-label="Play '+label+'">'
-    +'<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor"><path d="M2 1.5l9 5-9 5v-10z"/></svg></button>'
-    +'<div class="progress-wrap" data-pid="'+aid+'">'
-    +'<div class="progress-fill" id="pf-'+aid+'"></div>'
-    +'<div class="progress-dot" id="pd-'+aid+'"></div></div>'
-    +'<span class="audio-time" id="pt-'+aid+'">0:00</span></div>'
-    +'<audio id="'+aid+'" src="'+esc(url)+'" preload="none" style="display:none"></audio>'
-    +'</div>';
-}
-
-function timelineSec(p){
-  if(!p.pptx_view_url)return'<div class="sec"><div class="sec-label">Illustrated Timeline</div><div class="placeholder-block"><p>Illustrated timeline in production.</p></div></div>';
-  var th=p.pptx_thumbnail_url?'<img src="'+esc(p.pptx_thumbnail_url)+'" alt="">':'&#128202;';
-  return'<div class="sec"><div class="sec-label">Illustrated Timeline</div>'
-    +'<div class="pptx-block"><div class="pptx-thumb">'+th+'</div>'
-    +'<div class="pptx-info"><div class="pptx-title-t">'+(p.pptx_title||"Illustrated Timeline")+'</div>'
-    +(p.pptx_slide_count?'<div class="pptx-meta">'+p.pptx_slide_count+' slides</div>':"")
-    +'<div class="pptx-links">'
-    +'<a href="'+esc(p.pptx_view_url)+'" target="_blank" rel="noopener" class="pptx-link">View &#8599;</a>'
-    +(p.pptx_download_url?'<a href="'+esc(p.pptx_download_url)+'" target="_blank" rel="noopener" class="pptx-link">Download &#8595;</a>':"")
-    +'</div></div></div></div>';
-}
-
-function ytId(url){
-  if(!url)return null;
-  var m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/);
-  return m?m[1]:null;
-}
-
-function videoSec(p){
-  if(!p.youtube_url)return'<div class="sec"><div class="sec-label">Animated Presentation</div><div class="placeholder-block"><p>Animated presentation in production.</p></div></div>';
-  var yid=ytId(p.youtube_url);
-  if(yid){
-    return'<div class="sec"><div class="sec-label">Animated Presentation</div>'
-      +'<div class="video-wrap">'
-      +'<iframe src="https://www.youtube.com/embed/'+yid+'" title="Animated Presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-      +'</div></div>';
-  }
-  // Fallback: linked button for non-YouTube URLs
-  return'<div class="sec"><div class="sec-label">Animated Presentation</div>'
-    +'<div class="placeholder-block"><a href="'+esc(p.youtube_url)+'" target="_blank" rel="noopener" class="pptx-link" style="font-size:13px">Watch Presentation &#8599;</a></div></div>';
-}
-
-function extLinksHTML(p){
-  if(!p.wikipedia_url&&!p.youtube_url)return"";
-  var yid=ytId(p.youtube_url);
-  var h='<div class="sec"><div class="sec-label">External References</div><div class="ext-links">';
-  if(p.wikipedia_url)h+='<a href="'+esc(p.wikipedia_url)+'" target="_blank" rel="noopener" class="ext-link"><svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>Wikipedia &mdash; '+esc(p.full_name)+'</a>';
-  if(p.youtube_url&&yid)h+='<a href="'+esc(p.youtube_url)+'" target="_blank" rel="noopener" class="ext-link"><svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>YouTube &mdash; Animated Presentation</a>';
-  return h+'</div></div>';
-}
-
-function wireCards(){
-  document.querySelectorAll(".card").forEach(function(card){
-    var id=card.dataset.id;
-    card.querySelector(".card-cta").addEventListener("click",function(e){e.stopPropagation();openCard(id);});
-    card.querySelector(".card-portrait").addEventListener("click",function(){if(!card.classList.contains("open"))openCard(id);});
-    card.querySelector(".card-body").addEventListener("click",function(e){if(e.target.closest(".card-cta"))return;if(!card.classList.contains("open"))openCard(id);});
-  });
-  document.querySelectorAll(".close-btn").forEach(function(btn){
-    btn.addEventListener("click",function(e){e.stopPropagation();closeCard(btn.dataset.cid);});
-  });
-  document.querySelectorAll(".bio-toggle").forEach(function(btn){
-    btn.addEventListener("click",function(){
-      var el=document.getElementById("bext-"+btn.dataset.bid);
-      var o=el.classList.toggle("open");
-      btn.textContent=o?"Read less \u2191":"Read more \u2193";
-    });
-  });
-  document.querySelectorAll(".play-btn").forEach(function(btn){
-    btn.addEventListener("click",function(){toggleAudio(btn.dataset.aid);});
-  });
-  document.querySelectorAll(".progress-wrap").forEach(function(wrap){
-    wrap.addEventListener("click",function(e){
-      var aid=wrap.dataset.pid,audio=document.getElementById(aid);
-      if(!audio||!audio.duration)return;
-      var r=wrap.getBoundingClientRect();
-      audio.currentTime=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width))*audio.duration;
-      updateAudioUI(aid);
-    });
-  });
-}
-
-function openCard(id){
-  if(expandedId&&expandedId!==id)closeCard(expandedId);
-  expandedId=id;
-  var card=document.querySelector('.card[data-id="'+id+'"]');
-  if(!card)return;
-  card.classList.add("open");
-  setTimeout(function(){card.scrollIntoView({behavior:"smooth",block:"nearest"});},80);
-}
-
-function closeCard(id){
-  var card=document.querySelector('.card[data-id="'+id+'"]');
-  if(!card)return;
-  card.classList.remove("open");
-  card.querySelectorAll("audio").forEach(function(a){a.pause();a.currentTime=0;});
-  card.querySelectorAll(".play-btn").forEach(function(b){
-    b.innerHTML='<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor"><path d="M2 1.5l9 5-9 5v-10z"/></svg>';
-  });
-  if(expandedId===id)expandedId=null;
-}
-
-function toggleAudio(aid){
-  var audio=document.getElementById(aid);
-  var btn=document.querySelector('.play-btn[data-aid="'+aid+'"]');
-  if(!audio||!btn)return;
-  if(audio.paused){
-    document.querySelectorAll("audio").forEach(function(a){
-      if(a.id!==aid&&!a.paused){a.pause();
-        var ob=document.querySelector('.play-btn[data-aid="'+a.id+'"]');
-        if(ob)ob.innerHTML='<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor"><path d="M2 1.5l9 5-9 5v-10z"/></svg>';
-      }
-    });
-    audio.play().catch(function(){});
-    btn.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><rect x="1" y="1" width="4" height="10" rx="1"/><rect x="7" y="1" width="4" height="10" rx="1"/></svg>';
-    audio.addEventListener("timeupdate",function(){updateAudioUI(aid);});
-    audio.addEventListener("ended",function(){
-      btn.innerHTML='<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor"><path d="M2 1.5l9 5-9 5v-10z"/></svg>';
-    });
-  }else{
-    audio.pause();
-    btn.innerHTML='<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor"><path d="M2 1.5l9 5-9 5v-10z"/></svg>';
-  }
-}
-
-function updateAudioUI(aid){
-  var audio=document.getElementById(aid);
-  if(!audio||!audio.duration)return;
-  var pct=(audio.currentTime/audio.duration)*100;
-  var fill=document.getElementById("pf-"+aid);
-  var dot=document.getElementById("pd-"+aid);
-  var time=document.getElementById("pt-"+aid);
-  if(fill)fill.style.width=pct+"%";
-  if(dot)dot.style.left=pct+"%";
-  if(time)time.textContent=fmt(audio.currentTime)+" / "+fmt(audio.duration);
-}
-
-function fmt(s){var m=Math.floor(s/60),sc=Math.floor(s%60);return m+":"+(sc<10?"0":"")+sc;}
-
-function reveal(){
-  var cards=document.querySelectorAll(".card:not(.show)");
-  if("IntersectionObserver" in window){
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          var c=entry.target,idx=Array.from(c.parentElement.parentElement.children).indexOf(c.parentElement);
-          setTimeout(function(){c.classList.add("show");},Math.min(idx*60,600));
-          obs.unobserve(c);
-        }
-      });
-    },{threshold:0.05,rootMargin:"0px 0px -20px 0px"});
-    cards.forEach(function(c){obs.observe(c);});
-  }else{cards.forEach(function(c){c.classList.add("show");});}
-}
-
-fetch("people.json")
-  .then(function(r){
-    if(!r.ok)throw new Erro
+<script>
+const TICKER_ITEMS=['Oct 24, 1929 \u2014 Black Thursday','Oct 28, 1929 \u2014 Dow falls 12.8%','Oct 29, 1929 \u2014 Black Tuesday','Nov 13, 1929 \u2014 Market bottom (temporarily)','Mar 1929 \u2014 Mitchell defies Federal Reserve','Jun 1932 \u2014 Market reaches Depression low','Mar 1933 \u2014 Bank Holiday declared','Jun 1933 \u2014 Glass-Steagall enacted','1934 \u2014 Securities Exchange Act','1935 \u2014 Social Security Act','Apr 1932 \u2014 Pecora hearings begin','1932 \u2014 Unemployment reaches 25%','Nov 1932 \u2014 Roosevelt elected'];
+const CAT_COLORS={'Banker':{bg:'#8B6914',text:'#fff'},'Politician / Regulator':{bg:'#1C3A5E',text:'#fff'},'Speculator / Trader':{bg:'#5C2A2A',text:'#fff'},'Industrialist / Executive':{bg:'#2A4A2A',text:'#fff'},'Journalist / Intellectual':{bg:'#3D2A5C',text:'#fff'},'Reformer / Investigator':{bg:'#1A4A3A',text:'#fff'},'Other':{bg:'#4A3A2A',text:'#fff'}};
+const PEOPLE_DATA=[{"id":"charles-e-mitchell","full_name":"Charles E. Mitchell","sort_name":"Mitchell, Charles E.","role_title":"CEO, National City Bank","category":"Banker","institution":"National City Bank","primary_historical_role":"Architect of retail speculative banking and champion of securities sales to the American public.","page_references":"361–62, 383–84","bio_short":"Charles E. Mitchell transformed National City Bank into America's first truly retail bank, aggressively marketing securities to ordinary investors. His zealous promotion of stock speculation made him both celebrated and, after the crash, reviled as a symbol of Wall Street excess.","bio_extended":"Charles E. Mitchell rose to become the most powerful banker in America during the 1920s, presiding over National City Bank's transformation into a financial colossus. Mitchell pioneered the practice of selling securities directly to small investors through a nationwide network of salesmen — a radical democratization of finance that also opened the door to widespread speculation.\n\nWhen Senator Carter Glass proposed restrictions on bank securities activities, Mitchell defiantly defied the Federal Reserve's call to curb loans to brokers, publicly announcing he would provide whatever credit the market required. His statement in March 1929 arguably postponed the crash by months — and made it worse when it finally came.\n\nAfter the 1929 collapse, Ferdinand Pecora's Senate investigation exposed Mitchell's practice of selling his own National City Bank stock to avoid taxes — selling them to his wife at a loss and buying them back. He resigned in disgrace in 1933 and was indicted for tax evasion, though he was ultimately acquitted.","portrait_url":"","portrait_alt":"Portrait of Charles E. Mitchell","wikipedia_url":"https://en.wikipedia.org/wiki/Charles_E._Mitchell","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":true,"status":"published"},{"id":"thomas-w-lamont","full_name":"Thomas W. Lamont","sort_name":"Lamont, Thomas W.","role_title":"Partner, J.P. Morgan & Co.","category":"Banker","institution":"J.P. Morgan & Co.","primary_historical_role":"The voice of J.P. Morgan & Co. and orchestrator of the ill-fated banker rescue consortium of October 1929.","page_references":"312–15, 401–03","bio_short":"Thomas Lamont was J.P. Morgan's chief diplomat and public spokesman, navigating the firm through the treacherous waters of the post-war financial world. On Black Thursday, he led the famous banker pool that briefly stabilized the market — a last act of the old financial order.","bio_extended":"Thomas W. Lamont served as the indispensable partner of J.P. Morgan & Co. throughout the 1920s, handling the bank's international diplomacy, press relations, and political dealings with uncommon elegance. He was, in many respects, the human face of a firm that prided itself on operating without one.\n\nOn October 24, 1929 — Black Thursday — Lamont hosted the emergency meeting of the city's most powerful bankers at 23 Wall Street. Emerging to face the press, he delivered perhaps the most famous understatement of the crash era, calling the market situation 'a little distress selling.' The pool of funds the bankers assembled did briefly rally the market, but the effort was overwhelmed within days.\n\nLamont remained a titan of American finance through the New Deal era, serving as a key liaison between Wall Street and Washington even as the banking world was reformed around him.","portrait_url":"","portrait_alt":"Portrait of Thomas W. Lamont","wikipedia_url":"https://en.wikipedia.org/wiki/Thomas_W._Lamont","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":true,"status":"published"},{"id":"jp-morgan-jr","full_name":"J.P. Morgan Jr. (Jack Morgan)","sort_name":"Morgan, J.P. Jr.","role_title":"Senior Partner, J.P. Morgan & Co.","category":"Banker","institution":"J.P. Morgan & Co.","primary_historical_role":"Head of the Morgan empire during the crash era; symbol of plutocratic finance to reformers.","page_references":"298–301, 388–90","bio_short":"J.P. Morgan Jr. inherited the most powerful private bank in the world from his father and steered it through the tumult of two world wars and the Great Depression. His famous testimony before the Pecora Commission — interrupted by a circus promoter placing a dwarf on his lap — became an iconic image of the era.","bio_extended":"John Pierpont Morgan Jr., known as Jack, lived perpetually in the shadow of his legendary father and yet managed to expand the Morgan empire into an international financial power of extraordinary reach. He financed the Allied war effort in World War I and emerged from that conflict as one of the most influential private citizens in the world.\n\nUnlike his father, Jack Morgan was not a natural public figure. He preferred the company of bankers and statesmen to journalists, a posture that served him poorly when Ferdinand Pecora summoned him before the Senate Banking Committee in 1933. The hearings revealed that Morgan and his partners had paid no income taxes in 1931 and 1932, and had distributed shares in lucrative stock offerings to a 'preferred list' of politicians and public figures.\n\nThe famous photograph of Jack Morgan with circus midget Lya Graf seated on his knee — a publicity stunt arranged by a press agent during a recess in the hearings — perfectly encapsulated the strange theater of the Depression-era accountability moment.","portrait_url":"","portrait_alt":"Portrait of J.P. Morgan Jr.","wikipedia_url":"https://en.wikipedia.org/wiki/J._P._Morgan_Jr.","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"j-pierpont-morgan","full_name":"J. Pierpont Morgan","sort_name":"Morgan, J. Pierpont","role_title":"Founder, J.P. Morgan & Co.","category":"Banker","institution":"J.P. Morgan & Co.","primary_historical_role":"The architect of American corporate finance; his ghost presided over the crash that dismantled his era's system.","page_references":"22–28, 44–49","bio_short":"J. Pierpont Morgan was the colossus of American finance in the Gilded Age, personally halting the Panic of 1907 through sheer force of will and credit. He died in 1913, but the system of banking he built — and its concentration of power — was on trial throughout the Depression decade.","bio_extended":"John Pierpont Morgan transformed American capitalism, reorganizing the railroads, creating U.S. Steel, and serving as a one-man central bank during the financial panics of the late nineteenth and early twentieth centuries. His ability to marshal capital and impose order on chaotic markets seemed almost supernatural to contemporaries.\n\nIn 1907, when a banking panic threatened to cascade into economic catastrophe, Morgan summoned the leading bankers of New York to his library and effectively locked them in until they agreed to pool resources to stop the runs. It worked — but the episode made clear that the American financial system's stability depended on the goodwill of a single private citizen.\n\nThat realization drove the creation of the Federal Reserve System in 1913, the year Morgan died. The banking system he had dominated was already being institutionalized beyond any individual's control — a transformation his successors would struggle to accept and that the events of 1929 would force to completion.","portrait_url":"","portrait_alt":"Portrait of J. Pierpont Morgan","wikipedia_url":"https://en.wikipedia.org/wiki/J._P._Morgan","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"ferdinand-pecora","full_name":"Ferdinand Pecora","sort_name":"Pecora, Ferdinand","role_title":"Chief Counsel, Senate Banking Committee","category":"Reformer / Investigator","institution":"U.S. Senate / Congress","primary_historical_role":"The Sicilian-born prosecutor who dismantled Wall Street's reputation before a rapt national audience.","page_references":"410–18, 432–38","bio_short":"Ferdinand Pecora turned the Senate Banking Committee's investigation into a national spectacle, cross-examining the titans of American finance and revealing systemic corruption, tax evasion, and fraud. His relentless interrogations laid the groundwork for the Glass-Steagall Act and the Securities Exchange Act.","bio_extended":"Ferdinand Pecora was born in Sicily and came to America as a child, eventually working his way through law school and into the New York District Attorney's office. His appointment as Chief Counsel to the Senate Committee on Banking and Currency in January 1933 seemed almost an afterthought — previous counsel had made little progress.\n\nWhat followed was one of the greatest investigative performances in American legal history. Pecora proved a master of detail, cross-examining witnesses in hearings that were broadcast by radio and followed obsessively by a public hungry for accountability. He reduced Mitchell to admissions of tax evasion, exposed the Morgan 'preferred list' of political favors, and documented systemic manipulation of stock prices by major financial houses.\n\nThe hearings directly produced the Banking Act of 1933 (Glass-Steagall), the Securities Act of 1933, and the Securities Exchange Act of 1934. Pecora served briefly on the first Securities and Exchange Commission before being appointed to the New York Supreme Court.","portrait_url":"","portrait_alt":"Portrait of Ferdinand Pecora","wikipedia_url":"https://en.wikipedia.org/wiki/Ferdinand_Pecora","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":true,"status":"published"},{"id":"herbert-hoover","full_name":"Herbert Hoover","sort_name":"Hoover, Herbert","role_title":"31st President of the United States","category":"Politician / Regulator","institution":"White House / Executive Branch","primary_historical_role":"The engineer-president whose faith in voluntary action proved fatal in the face of economic collapse.","page_references":"278–85, 344–52","bio_short":"Herbert Hoover was perhaps the most qualified man ever to become President — a celebrated engineer, wartime relief administrator, and capable Commerce Secretary. His rigid ideology against direct federal relief during the Depression made him the defining symbol of governmental failure in the face of mass suffering.","bio_extended":"Herbert Clark Hoover entered the White House in March 1929 as a figure of almost universal admiration. His management of food relief for war-ravaged Europe after World War I had saved millions of lives, and his tenure as Commerce Secretary had modernized American industry. The stock market crash came just seven months into his presidency.\n\nHoover was not passive. He organized meetings with business leaders, urged them to maintain wages and employment, expanded public works spending, and created the Reconstruction Finance Corporation to loan money to banks and businesses. But he remained opposed on ideological grounds to direct federal relief to the unemployed, fearing it would destroy the self-reliance and local community bonds that he considered the foundation of American civilization.\n\nAs unemployment surged past 20 percent, his distinctions seemed callous beyond comprehension to suffering Americans. Shantytown settlements of the homeless were named 'Hoovervilles' in bitter mockery. He was routed by Franklin Roosevelt in 1932 by one of the largest margins in American history, ending his single disastrous term.","portrait_url":"","portrait_alt":"Portrait of Herbert Hoover","wikipedia_url":"https://en.wikipedia.org/wiki/Herbert_Hoover","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":true,"status":"published"},{"id":"carter-glass","full_name":"Carter Glass","sort_name":"Glass, Carter","role_title":"U.S. Senator, Virginia","category":"Politician / Regulator","institution":"U.S. Senate / Congress","primary_historical_role":"Father of the Federal Reserve and author of the Glass-Steagall Act separating commercial and investment banking.","page_references":"398–402","bio_short":"Carter Glass was the cantankerous Virginia senator who never forgave Charles Mitchell for defying the Federal Reserve in 1929. His righteous fury at Wall Street's abuses drove the Banking Act of 1933 — Glass-Steagall — which separated commercial and investment banking for sixty-six years.","bio_extended":"Carter Glass served in Congress for more than forty years and was instrumental in creating the Federal Reserve System in 1913. His understanding of banking was deep, his temper was legendary, and his memory for slights was infinite.\n\nWhen Charles Mitchell publicly defied the Federal Reserve's March 1929 call to restrict broker loans, Glass viewed it as a personal affront. He demanded Mitchell's arrest for violating the Federal Reserve Act — a charge that did not legally hold, but that revealed the intensity of Glass's conviction that Mitchell represented a corruption of everything banking should be.\n\nAfter the crash, Glass channeled his fury into legislation. Working with Henry Steagall in the House, he crafted the Banking Act of 1933, which prohibited commercial banks from engaging in investment banking and created federal deposit insurance. Glass actually opposed deposit insurance, viewing it as rewarding imprudence, but accepted it as the price of passing the rest of the bill.","portrait_url":"","portrait_alt":"Portrait of Carter Glass","wikipedia_url":"https://en.wikipedia.org/wiki/Carter_Glass","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"jesse-livermore","full_name":"Jesse Livermore","sort_name":"Livermore, Jesse","role_title":"Independent Speculator","category":"Speculator / Trader","institution":"Independent","primary_historical_role":"The 'Boy Plunger' who made a legendary $100 million fortune short-selling stocks in the 1929 crash.","page_references":"334–38","bio_short":"Jesse Livermore was the most celebrated speculator of his age, a self-taught trader from rural Massachusetts who amassed and lost several fortunes on Wall Street. His short position during the 1929 crash netted him approximately $100 million — making him one of the few men who profited enormously from the catastrophe.","bio_extended":"Jesse Livermore began trading stocks as a teenager in Boston bucket shops, developing an intuitive understanding of price movement that was almost preternatural. He was known as the 'Boy Plunger' for his willingness to bet enormous sums on his market convictions. He both caused and profited from the Panic of 1907.\n\nBy the summer of 1929, Livermore had concluded that the market was dangerously overvalued and began building an enormous short position — essentially betting that stocks would fall. When the crash came in October, he covered his shorts at enormous profit, reportedly walking away with around $100 million.\n\nThe fortune did not last. Livermore suffered losses in subsequent years, went bankrupt in 1934, and died by his own hand in a New York hotel in 1940. His life became the template for the romance and tragedy of the lone speculator — the man who sees the truth that everyone else refuses to acknowledge, profits from it, and is ultimately destroyed by his own nature.","portrait_url":"","portrait_alt":"Portrait of Jesse Livermore","wikipedia_url":"https://en.wikipedia.org/wiki/Jesse_Livermore","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":true,"status":"published"},{"id":"john-j-raskob","full_name":"John J. Raskob","sort_name":"Raskob, John J.","role_title":"Executive, DuPont / GM","category":"Industrialist / Executive","institution":"DuPont / GM","primary_historical_role":"The DuPont-GM executive who told everyone 'Everybody Ought to Be Rich' just before the crash.","page_references":"319–22","bio_short":"John Raskob was the financial architect of General Motors and DuPont's intertwined fortunes, and in August 1929 published an article in Ladies' Home Journal arguing that ordinary Americans could become wealthy by investing $15 a month in common stocks. The crash came two months later.","bio_extended":"John Jakob Raskob rose from stenographer to become the chief financial officer of both E.I. du Pont de Nemours and General Motors simultaneously — an extraordinary position reflecting his remarkable talent for corporate finance. He structured the financial relationships between the two companies that gave DuPont its controlling interest in GM.\n\nIn August 1929, as the stock market reached its peak, Raskob published 'Everybody Ought to Be Rich' in the Ladies' Home Journal. The article argued that investing $15 per month in good common stocks would yield a fortune of $80,000 in twenty years — an argument for the democratic wealth-building power of equities that proved devastatingly ill-timed.\n\nRaskob also served as chairman of the Democratic National Committee from 1928 to 1932 and was the primary financial backer of the Empire State Building project, which broke ground in 1930 and opened in 1931 as the Depression deepened. The building struggled to find tenants for years and was nicknamed the 'Empty State Building.'","portrait_url":"","portrait_alt":"Portrait of John J. Raskob","wikipedia_url":"https://en.wikipedia.org/wiki/John_J._Raskob","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"joseph-kennedy","full_name":"Joseph Kennedy","sort_name":"Kennedy, Joseph","role_title":"Financier & Speculator","category":"Speculator / Trader","institution":"Independent","primary_historical_role":"The Massachusetts financier who sold his stocks before the crash and became the first SEC chairman.","page_references":"355–58","bio_short":"Joseph P. Kennedy made his fortune through a combination of financial acumen, aggressive market manipulation, and timely exits. He reportedly began liquidating his stock holdings after a shoeshine boy offered him stock tips. Roosevelt rewarded his 1932 campaign support by appointing him the first chairman of the SEC.","bio_extended":"Joseph Patrick Kennedy accumulated his initial fortune through banking in Boston before moving to Wall Street, where he became expert in the pool operations and stock manipulation schemes that characterized the speculative era. He participated in pools in Pathe and Yellow Cab stock, among others.\n\nThe famous story of the shoeshine boy offering stock tips — which Kennedy interpreted as a signal of unsustainable popular enthusiasm and prompted him to liquidate his holdings — may be apocryphal, but it captures something true about Kennedy's contrarian instincts. He was out of the market substantially before October 1929.\n\nRoosevelt's appointment of Kennedy as the first chairman of the Securities and Exchange Commission in 1934 was widely criticized as setting a fox to guard the henhouse. Kennedy defied his critics, running an aggressive and effective first commission that established the SEC's credibility. He went on to serve as the first chairman of the Maritime Commission and as U.S. Ambassador to the United Kingdom.","portrait_url":"","portrait_alt":"Portrait of Joseph Kennedy","wikipedia_url":"https://en.wikipedia.org/wiki/Joseph_P._Kennedy_Sr.","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"john-maynard-keynes","full_name":"John Maynard Keynes","sort_name":"Keynes, John Maynard","role_title":"Economist","category":"Journalist / Intellectual","institution":"Independent","primary_historical_role":"The Cambridge economist whose theories of aggregate demand and government stimulus defined the intellectual response to the Depression.","page_references":"445–52","bio_short":"John Maynard Keynes was simultaneously one of history's great economic theorists and one of its most reckless speculators. He lost heavily in the 1929 crash and responded by revolutionizing economic theory — arguing that government spending could and must substitute for collapsed private demand.","bio_extended":"John Maynard Keynes was perhaps the twentieth century's most consequential economist, though his influence on the actual management of the 1929 crash and its immediate aftermath was limited. His great work, 'The General Theory of Employment, Interest and Money' (1936), emerged from the intellectual crisis the Depression provoked.\n\nKeynes himself was heavily invested in commodities and currencies through the 1920s and was caught badly by the crash — losing much of both his personal fortune and the endowment funds of King's College, Cambridge, which he managed. He rebuilt both over the subsequent decade through more disciplined value investing.\n\nHis theoretical response to the Depression was to directly challenge the classical economic orthodoxy that markets would self-correct. He argued that aggregate demand could fall to a level insufficient to employ all willing workers, and that government must step in as the 'spender of last resort.' The New Deal's public works programs were imperfect expressions of Keynesian logic; full Keynesian fiscal policy would not be tried until World War II.","portrait_url":"","portrait_alt":"Portrait of John Maynard Keynes","wikipedia_url":"https://en.wikipedia.org/wiki/John_Maynard_Keynes","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"huey-long","full_name":"Huey Long","sort_name":"Long, Huey","role_title":"U.S. Senator, Louisiana","category":"Politician / Regulator","institution":"U.S. Senate / Congress","primary_historical_role":"The 'Kingfish' of Louisiana whose Share Our Wealth program challenged Roosevelt from the left.","page_references":"478–84","bio_short":"Huey Long was the most dangerous demagogue of the Depression era — brilliant, corrupt, and genuinely popular with the rural poor who felt betrayed by both Wall Street and Washington. His Share Our Wealth plan, promising every American family a minimum income, had millions of followers and alarmed Roosevelt's inner circle.","bio_extended":"Huey Pierce Long, the 'Kingfish,' built a political machine in Louisiana that was simultaneously the most corrupt and the most effective in delivering material benefits to poor people in modern American history. He built roads, hospitals, and schools in a state that had almost none; he was also a thoroughgoing authoritarian who tolerated no opposition.\n\nElected to the Senate in 1932, Long broke with Roosevelt in 1933, becoming the most vocal left-wing critic of the New Deal — which he considered too timid. His 'Share Our Wealth' program proposed capping personal fortunes at $3 million and guaranteeing every family an annual income of at least $2,000 — radical redistribution on a scale that private polls suggested had genuine mass appeal.\n\nRoosevelt's advisors considered Long the most likely successful challenger to FDR in 1936. The threat ended when Long was assassinated in the Louisiana State Capitol in September 1935, shot by the son-in-law of a political enemy he had destroyed.","portrait_url":"","portrait_alt":"Portrait of Huey Long","wikipedia_url":"https://en.wikipedia.org/wiki/Huey_Long","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"fiorello-la-guardia","full_name":"Fiorello La Guardia","sort_name":"La Guardia, Fiorello","role_title":"U.S. Representative, New York","category":"Politician / Regulator","institution":"U.S. Senate / Congress","primary_historical_role":"The progressive New York congressman who foresaw the crash and fought for the poor during the Depression.","page_references":"422–25","bio_short":"Fiorello La Guardia was the scrappy, polyglot congressman from East Harlem who championed immigrants, labor, and the poor throughout the 1920s and Depression era. He went on to become arguably New York City's greatest mayor, transforming the city's infrastructure during his three terms from 1934 to 1945.","bio_extended":"Fiorello Henry La Guardia was the son of an Italian immigrant father and a Jewish mother, grew up partly in Arizona, and was shaped by intimate knowledge of poverty and marginalization. In Congress, he was a consistent thorn in the side of financial interests and a vocal advocate for progressive taxation and labor rights throughout the 1920s.\n\nLa Guardia was one of the few voices in Congress who warned persistently that the speculative boom was unsustainable and that the economic system as structured was failing working people. After the crash, he pushed aggressively for federal relief and unemployment insurance when the Hoover administration's preference for voluntarism left millions without assistance.\n\nHis election as Mayor of New York in 1933 gave him a platform to implement progressive governance at the city level — cleaning up Tammany corruption, modernizing city services, and using New Deal funds to transform New York's airports, parks, and public housing.","portrait_url":"","portrait_alt":"Portrait of Fiorello La Guardia","wikipedia_url":"https://en.wikipedia.org/wiki/Fiorello_La_Guardia","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"frances-perkins","full_name":"Frances Perkins","sort_name":"Perkins, Frances","role_title":"Commissioner of Labor, New York","category":"Politician / Regulator","institution":"White House / Executive Branch","primary_historical_role":"New York's labor commissioner and later the first female cabinet member; architect of Social Security.","page_references":"460–66","bio_short":"Frances Perkins witnessed the Triangle Shirtwaist fire of 1911 and dedicated her career to ensuring such tragedies could never recur. As Roosevelt's Secretary of Labor — the first woman in a U.S. Cabinet — she was the primary architect of the New Deal's labor and social safety net, including Social Security.","bio_extended":"Frances Perkins was present on the sidewalk near the Triangle Shirtwaist Factory when 146 workers, mostly young immigrant women, died in the fire of March 1911 — unable to escape because the factory doors had been locked. The experience transformed her from a committed Progressive reformer into a determined force for workplace safety legislation.\n\nAs New York's Industrial Commissioner under Governor Roosevelt, she built one of the most effective labor regulatory agencies in the country. When Roosevelt went to Washington, he took her with him as Secretary of Labor — a position she held for twelve years, the longest tenure of any Secretary of Labor in history.\n\nPerkins was the primary architect of the Social Security Act of 1935, negotiating the complex political compromises required to get it passed and ensuring it included both old-age insurance and unemployment insurance. She also drove the Fair Labor Standards Act of 1938, which established the federal minimum wage and maximum working hours.","portrait_url":"","portrait_alt":"Portrait of Frances Perkins","wikipedia_url":"https://en.wikipedia.org/wiki/Frances_Perkins","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"walter-lippmann","full_name":"Walter Lippmann","sort_name":"Lippmann, Walter","role_title":"Journalist & Political Commentator","category":"Journalist / Intellectual","institution":"Independent","primary_historical_role":"The era's preeminent political journalist and public intellectual, navigating the ideological turbulence of the Depression.","page_references":"441–44","bio_short":"Walter Lippmann was the most influential American journalist of the twentieth century's first half, whose 'Today and Tomorrow' column reached millions of readers. The Depression tested and ultimately transformed his political beliefs, pushing him from budget orthodoxy toward a more expansive view of government's obligations.","bio_extended":"Walter Lippmann began his career as a young progressive and was a founding editor of The New Republic before gravitating toward a more skeptical view of democratic theory expressed in his landmark books 'Public Opinion' (1922) and 'The Phantom Public' (1925).\n\nIn 1929, Lippmann was writing his 'Today and Tomorrow' column for the New York Herald Tribune, which would eventually be syndicated to 200 newspapers and 10 million readers. He was initially uncertain about Roosevelt and the New Deal, favoring balanced budgets and orthodox economics before the scale of the Depression's human cost pushed him toward more interventionist positions.\n\nLippmann's evolution during the 1930s mirrored that of many educated Americans who entered the decade as conventional liberals and emerged with a far more expansive view of the state's obligations to its citizens. He remained an important voice in American public life into the 1960s, winning two Pulitzer Prizes.","portrait_url":"","portrait_alt":"Portrait of Walter Lippmann","wikipedia_url":"https://en.wikipedia.org/wiki/Walter_Lippmann","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"montagu-norman","full_name":"Montagu Norman","sort_name":"Norman, Montagu","role_title":"Governor, Bank of England","category":"Banker","institution":"Other","primary_historical_role":"The enigmatic Bank of England governor whose policies helped export American credit conditions globally.","page_references":"288–93","bio_short":"Montagu Norman governed the Bank of England for an unprecedented twenty-four years, obsessively working to restore the gold standard. His close friendship with Benjamin Strong of the New York Fed led to coordinated policies that some historians argue helped inflate — and then puncture — the 1920s bubble.","bio_extended":"Montagu Collet Norman, 1st Baron Norman, was the most powerful central banker in the world during the 1920s, though his power rested on prestige and persuasion rather than any formal authority. He cultivated an air of mystery — traveling under assumed names, rarely speaking publicly — that made him simultaneously legendary and unknowable.\n\nNorman's central preoccupation was restoring Britain and the world to the gold standard at pre-war parities, which required keeping British interest rates competitive with American rates. His friendship with Benjamin Strong of the New York Federal Reserve Bank was critical: Strong's agreement to keep American rates low in 1927 to help Britain manage its gold position is one of the contested causes of the late-1920s American credit boom.\n\nWhen the Depression hit Britain, Norman maintained orthodox deflationary policies far longer than the economic evidence warranted. Britain was finally forced off gold in September 1931, which Norman found devastating. Paradoxically, leaving gold proved the beginning of Britain's economic recovery.","portrait_url":"","portrait_alt":"Portrait of Montagu Norman","wikipedia_url":"https://en.wikipedia.org/wiki/Montagu_Norman,_1st_Baron_Norman","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"ogden-l-mills","full_name":"Ogden L. Mills","sort_name":"Mills, Ogden L.","role_title":"U.S. Secretary of the Treasury","category":"Politician / Regulator","institution":"White House / Executive Branch","primary_historical_role":"Hoover's Treasury Secretary and an orthodox defender of the gold standard through the banking crisis.","page_references":"388–91","bio_short":"Ogden Mills served as Hoover's Treasury Secretary during the acute banking crisis of 1932–33, defending gold standard orthodoxy as the banking system teetered. His rigid adherence to deflationary policies made the crisis worse during the difficult interregnum before Roosevelt took office.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Ogden L. Mills","wikipedia_url":"https://en.wikipedia.org/wiki/Ogden_Mills","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"peter-norbeck","full_name":"Peter Norbeck","sort_name":"Norbeck, Peter","role_title":"U.S. Senator, South Dakota","category":"Reformer / Investigator","institution":"U.S. Senate / Congress","primary_historical_role":"The South Dakota senator who initiated the Senate investigation that became the Pecora hearings.","page_references":"406–09","bio_short":"Peter Norbeck, the progressive Republican senator from South Dakota, was the first chairman of the Senate Banking Committee's investigation into stock exchange practices — the inquiry that Ferdinand Pecora ultimately transformed into a national reckoning. A former well-driller and self-made man, he had little patience for Wall Street pretension.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Peter Norbeck","wikipedia_url":"https://en.wikipedia.org/wiki/Peter_Norbeck","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"russell-leffingwell","full_name":"Russell Cornell Leffingwell","sort_name":"Leffingwell, Russell Cornell","role_title":"Partner, J.P. Morgan & Co.","category":"Banker","institution":"J.P. Morgan & Co.","primary_historical_role":"Morgan partner and former Treasury official who bridged Wall Street and government through the crisis years.","page_references":"315–17","bio_short":"Russell Leffingwell served as Assistant Secretary of the Treasury under Woodrow Wilson before joining J.P. Morgan & Co., where he became one of the firm's most influential partners and an important voice connecting the bank to Washington policymakers during the Depression.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Russell Cornell Leffingwell","wikipedia_url":"https://en.wikipedia.org/wiki/Russell_Leffingwell","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"raymond-moley","full_name":"Raymond Moley","sort_name":"Moley, Raymond","role_title":"Advisor, Roosevelt Brain Trust","category":"Politician / Regulator","institution":"White House / Executive Branch","primary_historical_role":"The Columbia professor who led Roosevelt's Brain Trust and helped architect the early New Deal.","page_references":"455–58","bio_short":"Raymond Moley was the Columbia political science professor who assembled Roosevelt's Brain Trust of academic advisors and helped write the speeches and early legislation of the New Deal's Hundred Days. He later broke with Roosevelt and became a conservative critic of the New Deal's expansion.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Raymond Moley","wikipedia_url":"https://en.wikipedia.org/wiki/Raymond_Moley","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"paul-mellon","full_name":"Paul Mellon","sort_name":"Mellon, Paul","role_title":"Financier","category":"Banker","institution":"Independent","primary_historical_role":"Son of Treasury Secretary Andrew Mellon; heir to the Mellon banking and industrial fortune.","page_references":"302–05","bio_short":"Paul Mellon was the son of Treasury Secretary Andrew Mellon, whose 'liquidationist' policy of allowing the Depression to run its course became the era's most reviled economic advice. Paul himself became a distinguished philanthropist and art collector, largely stepping away from the family's financial operations.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Paul Mellon","wikipedia_url":"https://en.wikipedia.org/wiki/Paul_Mellon","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"william-c-potter","full_name":"William C. Potter","sort_name":"Potter, William C.","role_title":"Banker","category":"Banker","institution":"Other","primary_historical_role":"President of Guaranty Trust Company and participant in the October 1929 banker consortium.","page_references":"325–27","bio_short":"William C. Potter served as president of Guaranty Trust Company and was one of the senior bankers who gathered at J.P. Morgan & Co. on Black Thursday to pool resources in an attempt to stabilize the falling market.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of William C. Potter","wikipedia_url":"","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"james-r-keene","full_name":"James R. Keene","sort_name":"Keene, James R.","role_title":"Speculator","category":"Speculator / Trader","institution":"Independent","primary_historical_role":"The master pool operator of the Gilded Age whose techniques shaped 1920s market manipulation.","page_references":"248–52","bio_short":"James Robert Keene was the most celebrated market operator of the Gilded Age, the man J.P. Morgan hired to manage the distribution of U.S. Steel shares in 1901. His pool techniques and market manipulation methods became the template studied and imitated by the speculators of the 1920s.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of James R. Keene","wikipedia_url":"https://en.wikipedia.org/wiki/James_R._Keene","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"joseph-stagg-lawrence","full_name":"Joseph Stagg Lawrence","sort_name":"Lawrence, Joseph Stagg","role_title":"Economist","category":"Journalist / Intellectual","institution":"Independent","primary_historical_role":"The Princeton economist who published an optimistic defense of stock valuations weeks before the crash.","page_references":"329–31","bio_short":"Joseph Stagg Lawrence was a Princeton economist who published 'Wall Street and Washington' in 1929, arguing that contemporary stock valuations were justified by economic fundamentals. The book appeared just as the market was beginning its catastrophic decline.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Joseph Stagg Lawrence","wikipedia_url":"","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"henry-p-morgan","full_name":"Henry P. Morgan","sort_name":"Morgan, Henry P.","role_title":"Financier","category":"Banker","institution":"J.P. Morgan & Co.","primary_historical_role":"Member of the extended Morgan family who later co-founded Morgan Stanley after Glass-Steagall.","page_references":"308–10","bio_short":"Henry Sturgis Morgan was a son of J.P. Morgan Jr. and a partner in J.P. Morgan & Co. during the Depression era. He later co-founded Morgan Stanley in 1935 when the Glass-Steagall Act required the separation of the bank's commercial and investment banking activities.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Henry P. Morgan","wikipedia_url":"","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"guglielmo-marconi","full_name":"Guglielmo Marconi","sort_name":"Marconi, Guglielmo","role_title":"Inventor / Entrepreneur","category":"Other","institution":"Other","primary_historical_role":"The radio pioneer whose invention transformed communications and created one of the era's speculative investment vehicles.","page_references":"258–62","bio_short":"Guglielmo Marconi's invention of practical wireless telegraphy transformed global communications and created one of the signature investment stories of the early twentieth century. Radio company stocks became a key object of 1920s speculation, with RCA becoming the era's defining glamour stock.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Guglielmo Marconi","wikipedia_url":"https://en.wikipedia.org/wiki/Guglielmo_Marconi","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"harold-r-medina","full_name":"Harold R. Medina","sort_name":"Medina, Harold R.","role_title":"Attorney","category":"Other","institution":"Other","primary_historical_role":"Prominent attorney who later became a federal judge known for his handling of major trials.","page_references":"488–91","bio_short":"Harold R. Medina was a prominent New York attorney during the Depression era who later became a federal judge, best known for his conduct of the 1949 trial of the leaders of the American Communist Party. His legal career spanned the entire period from the 1920s boom through the Depression and beyond.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Harold R. Medina","wikipedia_url":"https://en.wikipedia.org/wiki/Harold_Medina","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"howard-vincent-obrien","full_name":"Howard Vincent O'Brien","sort_name":"O'Brien, Howard Vincent","role_title":"Journalist","category":"Journalist / Intellectual","institution":"Independent","primary_historical_role":"Chicago Daily News journalist and editor who chronicled the Depression era for Midwestern readers.","page_references":"442–44","bio_short":"Howard Vincent O'Brien was a Chicago Daily News journalist and columnist who provided Midwestern readers with thoughtful coverage of the crash and Depression. His 'All Things Considered' column offered a humanistic perspective on the era's upheavals that reached a large daily readership.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Howard Vincent O'Brien","wikipedia_url":"","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"james-maclafferty","full_name":"James MacLafferty","sort_name":"MacLafferty, James","role_title":"U.S. Representative","category":"Politician / Regulator","institution":"U.S. Senate / Congress","primary_historical_role":"California congressman and Hoover loyalist who worked to defend the administration during the Depression.","page_references":"372–75","bio_short":"James MacLafferty was a California Republican congressman and staunch Hoover loyalist who worked behind the scenes to maintain Congressional support for the Hoover administration's Depression policies. His diary provides a valuable insider account of the political machinations of the era.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of James MacLafferty","wikipedia_url":"","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"john-j-pershing","full_name":"John J. Pershing","sort_name":"Pershing, John J.","role_title":"General, U.S. Army","category":"Other","institution":"Other","primary_historical_role":"Commander of the American Expeditionary Forces in WWI; a figure of immense authority during the Depression era.","page_references":"264–67","bio_short":"General John 'Black Jack' Pershing commanded the American Expeditionary Forces in World War I and remained the most revered military figure in America throughout the 1920s and 1930s. His moral authority was occasionally invoked in the political debates of the Depression era, though he remained aloof from politics.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of John J. Pershing","wikipedia_url":"https://en.wikipedia.org/wiki/John_Pershing","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"kenneth-mckellar","full_name":"Kenneth McKellar","sort_name":"McKellar, Kenneth","role_title":"U.S. Senator, Tennessee","category":"Politician / Regulator","institution":"U.S. Senate / Congress","primary_historical_role":"Long-serving Tennessee senator who supported New Deal programs including the Tennessee Valley Authority.","page_references":"468–71","bio_short":"Kenneth McKellar was Tennessee's senior senator throughout the Depression era and a powerful figure in the Democratic party. He was a strong supporter of the Tennessee Valley Authority, which transformed his state's economy, though he later became a complicated and sometimes obstructionist figure in New Deal politics.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Kenneth McKellar","wikipedia_url":"https://en.wikipedia.org/wiki/Kenneth_McKellar","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"michael-levine","full_name":"Michael Levine","sort_name":"Levine, Michael","role_title":"Financier","category":"Banker","institution":"Other","primary_historical_role":"Financier active in the securities markets of the late 1920s.","page_references":"340–42","bio_short":"Michael Levine was a financier active in the securities markets of the late 1920s, involved in the complex web of investment trusts and holding companies that characterized the era's speculative excess.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Michael Levine","wikipedia_url":"","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"robert-l-owen","full_name":"Robert L. Owen","sort_name":"Owen, Robert L.","role_title":"U.S. Senator, Oklahoma","category":"Politician / Regulator","institution":"U.S. Senate / Congress","primary_historical_role":"Co-author of the Federal Reserve Act of 1913 and advocate for monetary reform during the Depression.","page_references":"282–86","bio_short":"Robert Latham Owen was the Oklahoma senator who co-authored the Federal Reserve Act of 1913 alongside Carter Glass, helping create the central banking system that would be tested to its limits by the 1929 crash. During the Depression, he advocated for more radical monetary reforms than most colleagues would accept.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Robert L. Owen","wikipedia_url":"https://en.wikipedia.org/wiki/Robert_L._Owen","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"},{"id":"salmon-levinson","full_name":"Salmon Levinson","sort_name":"Levinson, Salmon","role_title":"Attorney / Peace Activist","category":"Other","institution":"Independent","primary_historical_role":"Chicago attorney who originated the concept of 'outlawing war' that culminated in the Kellogg-Briand Pact.","page_references":"270–73","bio_short":"Salmon Oliver Levinson was a prominent Chicago attorney who originated and campaigned for the concept of 'outlawing war' as an instrument of national policy — an idea that culminated in the Kellogg-Briand Pact of 1928. His legal career intersected with the financial and political worlds of the Depression era.","bio_extended":"","portrait_url":"","portrait_alt":"Portrait of Salmon Levinson","wikipedia_url":"https://en.wikipedia.org/wiki/Salmon_Oliver_Levinson","youtube_url":"","audio_short_url":"","audio_short_duration":"","audio_short_description":"","audio_extended_url":"","audio_extended_duration":"","audio_extended_description":"","pptx_title":"","pptx_view_url":"","pptx_download_url":"","pptx_slide_count":null,"pptx_thumbnail_url":"","featured":false,"status":"published"}];
+let allPeople=[],filtered=[],activeCategory='',activeInstitution='',searchQuery='',expandedId=null,searchTimeout=null;
+function buildTicker(){const t=document.getElementById('tickerTrack');const items=[...TICKER_ITEMS,...TICKER_ITEMS];t.innerHTML=items.map(i=>`<span>${i}</span>`).join('')}
+function init(){buildTicker();allPeople=PEOPLE_DATA.filter(p=>p.status==='published');allPeople.sort((a,b)=>{if(a.featured&&!b.featured)return -1;if(!a.featured&&b.featured)return 1;return a.sort_name.localeCompare(b.sort_name)});filtered=[...allPeople];renderGallery();setupFilters();document.getElementById('footerDate').textContent='Last updated: February 2026'}
+function setupFilters(){const s=document.getElementById('searchInput'),c=document.getElementById('categoryFilter'),ins=document.getElementById('institutionFilter'),cl=document.getElementById('clearBtn');s.addEventListener('input',()=>{clearTimeout(searchTimeout);searchTimeout=setTimeout(()=>{searchQuery=s.value.trim().toLowerCase();applyFilters()},300)});c.addEventListener('change',()=>{activeCategory=c.value;applyFilters()});ins.addEventListener('change',()=>{activeInstitution=ins.value;applyFilters()});cl.addEventListener('click',()=>{s.value='';c.value='';ins.value='';searchQuery='';activeCategory='';activeInstitution='';applyFilters()})}
+function applyFilters(){filtered=allPeople.filter(p=>{const ms=!searchQuery||p.full_name.toLowerCase().includes(searchQuery)||p.category.toLowerCase().includes(searchQuery)||p.institution.toLowerCase().includes(searchQuery)||p.role_title.toLowerCase().includes(searchQuery);const mc=!activeCategory||p.category===activeCategory;const mi=!activeInstitution||p.institution===activeInstitution;return ms&&mc&&mi});expandedId=null;renderGallery();updateFilterMeta()}
+function updateFilterMeta(){const total=allPeople.length,shown=filtered.length;document.getElementById('filterCount').textContent=`Showing ${shown} of ${total} figures`;const pills=document.getElementById('activePills');pills.innerHTML='';if(searchQuery)pills.appendChild(makePill(`"${searchQuery}"`,()=>{document.getElementById('searchInput').value='';searchQuery='';applyFilters()}));if(activeCategory)pills.appendChild(makePill(activeCategory,()=>{document.getElementById('categoryFilter').value='';activeCategory='';applyFilters()}));if(activeInstitution)pills.appendChild(makePill(activeInstitution,()=>{document.getElementById('institutionFilter').value='';activeInstitution='';applyFilters()}))}
+function makePill(label,onRemove){const p=document.createElement('button');p.className='active-pill';p.setAttribute('aria-label',`Remove filter: ${label}`);p.innerHTML=`${label} <span class="pill-x" aria-hidden="true">\u00d7</span>`;p.addEventListener('click',onRemove);return p}
+function renderGallery(){const grid=document.getElementById('galleryGrid');grid.innerHTML='';if(filtered.length===0){const m=document.createElement('p');m.className='no-results';m.textContent='No figures match your current filters.';grid.appendChild(m);updateFilterMeta();return}filtered.forEach(p=>{const w=document.createElement('div');w.className='card-wrap';w.innerHTML=buildCard(p);grid.appendChild(w)});updateFilterMeta();setupObserver();attachCardListeners()}
+function getMonogram(name){const parts=name.replace(/[^a-zA-Z\s]/g,'').trim().split(/\s+/);if(parts.length>=2)return(parts[0][0]+parts[parts.length-1][0]).toUpperCase();return parts[0][0].toUpperCase()}
+function buildCard(p){const col=CAT_COLORS[p.category]||CAT_COLORS['Other'];const mono=getMonogram(p.full_name);const portraitHTML=p.portrait_url?`<img src="${p.portrait_url}" alt="${p.portrait_alt}" loading="lazy">`:`<div class="card-portrait-mono"><span class="card-portrait-mono-letter">${mono}</span></div>`;const hasAS=!!p.audio_short_url,hasAE=!!p.audio_extended_url,hasPP=!!p.pptx_view_url,hasW=!!p.wikipedia_url,hasYT=!!p.youtube_url;const mediaRow=`<div class="card-media-row" aria-label="Available media"><span class="media-indicator ${hasAS?'available':''}" title="Short audio">&#127911; Short</span><span class="media-indicator ${hasAE?'available':''}" title="Extended audio">&#127911;&#127911; Ext.</span><span class="media-indicator ${hasPP?'available':''}" title="Presentation">&#128202; Slides</span>${hasW?`<span class="media-indicator available" title="Wikipedia">&#128279; Wiki</span>`:''}${hasYT?`<span class="media-indicator available" title="YouTube">&#9654;&#65039; Video</span>`:''}</div>`;const feat=p.featured?`<div class="featured-badge" aria-label="Featured">Featured</div>`:'';return`<article class="card" data-id="${p.id}" role="listitem" aria-label="${p.full_name}"><div class="card-portrait">${portraitHTML}<div class="portrait-vignette" aria-hidden="true"></div><div class="card-category-pill" style="background:${col.bg};color:${col.text}" aria-label="Category: ${p.category}">${p.category}</div>${feat}</div><div class="card-body"><h2 class="card-name">${p.full_name}</h2><p class="card-role">${p.role_title}</p><p class="card-teaser">${p.primary_historical_role}</p>${mediaRow}<button class="card-cta" aria-expanded="false" aria-controls="expanded-${p.id}">Read Profile \u2192</button></div><div class="card-expanded" id="expanded-${p.id}" aria-hidden="true">${buildExpanded(p)}</div></article>`}
+function buildExpanded(p){const hasW=!!p.wikipedia_url,hasYT=!!p.youtube_url;const bioShort=p.bio_short||'<em>Biography coming soon.</em>';const hasExt=!!p.bio_extended;const bioExtP=p.bio_extended?p.bio_extended.split('\n\n').filter(s=>s.trim()).map(s=>`<p>${s.trim()}</p>`).join(''):'';const extLinks=(hasW||hasYT)?`<div class="exp-section"><div class="exp-section-label">External References</div><div class="ext-links">${hasW?`<a href="${p.wikipedia_url}" target="_blank" rel="noopener noreferrer" class="ext-link"><svg class="ext-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>Wikipedia \u2014 ${p.full_name}</a>`:''}${hasYT?`<a href="${p.youtube_url}" target="_blank" rel="noopener noreferrer" class="ext-link"><svg class="ext-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>YouTube \u2014 Video Documentary</a>`:''}</div></div>`:'';return`<div class="expanded-inner"><div class="exp-header"><div class="exp-header-left"><h3 class="exp-name">${p.full_name}</h3><div class="exp-role">${p.role_title} &bull; ${p.institution}</div>${p.page_references?`<div class="exp-page-ref"><strong>Index pp.</strong>${p.page_references}</div>`:''}</div><button class="exp-close" aria-label="Close profile for ${p.full_name}" data-close="${p.id}">\u2715</button></div><div class="exp-section"><div class="exp-section-label">Biography</div><div class="exp-bio-short">${bioShort}</div>${hasExt?`<div class="exp-bio-extended" id="bio-ext-${p.id}">${bioExtP}</div><button class="bio-toggle" data-bio="${p.id}" aria-expanded="false">Read more \u2193</button>`:''}</div>${buildAudioSection(p)}${buildPptxSection(p)}${extLinks}</div>`}
+function buildAudioSection(p){const hS=!!p.audio_short_url,hE=!!p.audio_extended_url;if(!hS&&!hE)return`<div class="exp-section"><div class="exp-section-label">Audio Descriptions</div><div class="audio-placeholder"><p>Audio description in production \u2014 check back soon.</p></div></div>`;const sB=hS?buildAudioPlayer('short',p.id,p.audio_short_url,p.audio_short_duration,p.audio_short_description,'Short Version'):`<div class="audio-placeholder"><p>Short audio coming soon.</p></div>`;const eB=hE?buildAudioPlayer('extended',p.id,p.audio_extended_url,p.audio_extended_duration,p.audio_extended_description,'Extended Version'):`<div class="audio-placeholder"><p>Extended audio coming soon.</p></div>`;return`<div class="exp-section"><div class="exp-section-label">Audio Descriptions</div>${sB}${eB}</div>`}
+function buildAudioPlayer(type,pid,url,dur,desc,label){const id=`audio-${pid}-${type}`;return`<div class="audio-block"><div class="audio-block-header"><span class="audio-block-title">${label}</span>${dur?`<span class="audio-duration">${dur}</span>`:''}</div>${desc?`<div class="audio-desc">${desc}</div>`:''}<div class="audio-player-ui"><button class="audio-play-btn" data-player="${id}" aria-label="Play ${label}"><svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor" aria-hidden="true"><path d="M2 1.5l9 5-9 5v-10z"/></svg></button><div class="audio-progress-wrap" data-progress="${id}" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="audio-progress-fill" id="fill-${id}"></div><div class="audio-scrubber" id="scrub-${id}"></div></div><span class="audio-time" id="time-${id}">0:00</span></div><audio id="${id}" src="${url}" preload="none" style="display:none"></audio></div>`}
+function buildPptxSection(p){if(!p.pptx_view_url)return`<div class="exp-section"><div class="exp-section-label">Animated Presentation</div><div class="pptx-placeholder"><p>Presentation in production.</p></div></div>`;const th=p.pptx_thumbnail_url?`<img src="${p.pptx_thumbnail_url}" alt="Slide thumbnail">`:`<div class="pptx-thumb-placeholder">&#128202;</div>`;return`<div class="exp-section"><div class="exp-section-label">Animated Presentation</div><div class="pptx-block"><div class="pptx-thumb">${th}</div><div class="pptx-info"><div class="pptx-title-text">${p.pptx_title||'Presentation'}</div>${p.pptx_slide_count?`<div class="pptx-meta">${p.pptx_slide_count} slides</div>`:''}<div class="pptx-links"><a href="${p.pptx_view_url}" target="_blank" rel="noopener noreferrer" class="pptx-link">View Presentation \u2197</a>${p.pptx_download_url?`<a href="${p.pptx_download_url}" download class="pptx-link">Download .pptx \u2193</a>`:''}</div></div></div></div>`}
+function attachCardListeners(){document.querySelectorAll('.card').forEach(card=>{const id=card.dataset.id;card.querySelector('.card-cta').addEventListener('click',e=>{e.stopPropagation();openCard(id)});card.querySelector('.card-portrait').addEventListener('click',e=>{if(!card.classList.contains('expanded'))openCard(id)});card.querySelector('.card-body').addEventListener('click',e=>{if(e.target.closest('.card-cta'))return;if(!card.classList.contains('expanded'))openCard(id)})});document.querySelectorAll('[data-close]').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();closeCard(btn.dataset.close)})});document.querySelectorAll('[data-bio]').forEach(btn=>{btn.addEventListener('click',()=>{const id=btn.dataset.bio;const el=document.getElementById(`bio-ext-${id}`);const open=el.classList.toggle('open');btn.textContent=open?'Read less \u2191':'Read more \u2193';btn.setAttribute('aria-expanded',open)})});document.querySelectorAll('.audio-play-btn').forEach(btn=>{btn.addEventListener('click',()=>toggleAudio(btn.dataset.player))});document.querySelectorAll('.audio-progress-wrap').forEach(wrap=>{wrap.addEventListener('click',e=>{const pid=wrap.dataset.progress;const audio=document.getElementById(pid);if(!audio||!audio.duration)return;const rect=wrap.getBoundingClientRect();const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));audio.currentTime=pct*audio.duration;updateAudioUI(pid)})})}
+function openCard(id){if(expandedId&&expandedId!==id)closeCard(expandedId,false);expandedId=id;const card=document.querySelector(`.card[data-id="${id}"]`);if(!card)return;card.classList.add('expanded');card.querySelector('.card-expanded').setAttribute('aria-hidden','false');const cta=card.querySelector('.card-cta');if(cta)cta.setAttribute('aria-expanded','true');setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'nearest'}),100)}
+function closeCard(id){const card=document.querySelector(`.card[data-id="${id}"]`);if(!card)return;card.classList.remove('expanded');card.querySelector('.card-expanded').setAttribute('aria-hidden','true');const cta=card.querySelector('.card-cta');if(cta)cta.setAttribute('aria-expanded','false');card.querySelectorAll('audio').forEach(a=>{a.pause();a.currentTime=0});card.querySelectorAll('.audio-play-btn').forEach(b=>{b.innerHTML='<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor" aria-hidden="true"><path d="M2 1.5l9 5-9 5v-10z"/></svg>'});if(expandedId===id)expandedId=null}
+function toggleAudio(pid){const audio=document.getElementById(pid);const btn=document.querySelector(`[data-player="${pid}"]`);if(!audio||!btn)return;if(audio.paused){document.querySelectorAll('audio').forEach(a=>{if(a.id!==pid&&!a.paused){a.pause();const ob=document.querySelector(`[data-player="${a.id}"]`);if(ob)ob.innerHTML='<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor" aria-hidden="true"><path d="M2 1.5l9 5-9 5v-10z"/></svg>'}});audio.play().catch(()=>{});btn.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="4" height="10" rx="1"/><rect x="7" y="1" width="4" height="10" rx="1"/></svg>';audio.addEventListener('timeupdate',()=>updateAudioUI(pid));audio.addEventListener('ended',()=>{btn.innerHTML='<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor" aria-hidden="true"><path d="M2 1.5l9 5-9 5v-10z"/></svg>'})}else{audio.pause();btn.innerHTML='<svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor" aria-hidden="true"><path d="M2 1.5l9 5-9 5v-10z"/></svg>'}}
+function updateAudioUI(pid){const audio=document.getElementById(pid);if(!audio||!audio.duration)return;const pct=(audio.currentTime/audio.duration)*100;const fill=document.getElementById(`fill-${pid}`);const scrub=document.getElementById(`scrub-${pid}`);const time=document.getElementById(`time-${pid}`);if(fill)fill.style.width=pct+'%';if(scrub)scrub.style.left=pct+'%';if(time)time.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration)}
+function fmt(s){const m=Math.floor(s/60);const sc=Math.floor(s%60);return`${m}:${sc.toString().padStart(2,'0')}`}
+function setupObserver(){const cards=document.querySelectorAll('.card:not(.visible)');if('IntersectionObserver' in window){const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const card=e.target;const delay=Array.from(card.parentElement.parentElement.children).indexOf(card.parentElement)*60;setTimeout(()=>card.classList.add('visible'),Math.min(delay,600));obs.unobserve(card)}})},{threshold:0.05,rootMargin:'0px 0px -30px 0px'});cards.forEach(c=>obs.observe(c))}else{cards.forEach(c=>c.classList.add('visible'))}}
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>
