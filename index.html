@@ -135,6 +135,8 @@ body{background:var(--cream);color:var(--ink);font-family:var(--font-sans);line-
 .footer-date{font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:16px;color:rgba(245,240,232,.3)}
 .no-results{text-align:center;padding:60px 20px;font-family:var(--font-serif);font-style:italic;color:var(--ink-muted);font-size:16px;column-span:all}
 .loading-msg{text-align:center;padding:60px 20px;font-family:var(--font-serif);font-style:italic;color:var(--ink-muted);font-size:16px}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border:1px solid rgba(26,26,26,.1)}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 @media(max-width:640px){.masthead{padding:36px 16px 28px}.filter-bar{padding:10px 16px}.filter-select{min-width:120px}}
 </style>
 </head>
@@ -189,12 +191,12 @@ body{background:var(--cream);color:var(--ink);font-family:var(--font-sans);line-
     <hr class="footer-hr">
     <div class="footer-body">
       <p>Data sourced from the 1929 Project research index. Audio descriptions generated via Google NotebookLM.</p>
-      <p style="margin-top:10px">A project of <em>[Organization Name]</em> &bull; <a href="mailto:contact@1929project.org">contact@1929project.org</a></p>
+      <p style="margin-top:10px">A project of <em>[Organization Name]</em> &bull; <a href="/cdn-cgi/l/email-protection#33505c5d4752504773020a010a43415c595650471d5c4154"><span class="__cf_email__" data-cfemail="e784888993868493a7d6ded5de9795888d828493c9889580">[email&#160;protected]</span></a></p>
     </div>
     <div class="footer-date">Last updated: February 2026</div>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 "use strict";
 var TICKER=["Oct 24, 1929 \u2014 Black Thursday","Oct 28, 1929 \u2014 Dow falls 12.8%","Oct 29, 1929 \u2014 Black Tuesday","Nov 13, 1929 \u2014 Market bottom","Mar 1929 \u2014 Mitchell defies Federal Reserve","Jun 1932 \u2014 Market reaches Depression low","Mar 1933 \u2014 Bank Holiday declared","Jun 1933 \u2014 Glass-Steagall enacted","1934 \u2014 Securities Exchange Act","1935 \u2014 Social Security Act","Apr 1932 \u2014 Pecora hearings begin","1932 \u2014 Unemployment reaches 25%","Nov 1932 \u2014 Roosevelt elected"];
 var CAT_COLORS={"Banker":{bg:"#8B6914"},"Politician / Regulator":{bg:"#1C3A5E"},"Speculator / Trader":{bg:"#5C2A2A"},"Industrialist / Executive":{bg:"#2A4A2A"},"Journalist / Intellectual":{bg:"#3D2A5C"},"Reformer / Investigator":{bg:"#1A4A3A"},"Other":{bg:"#4A3A2A"}};
@@ -313,15 +315,13 @@ function expHTML(p){
     +'<button class="close-btn" data-cid="'+p.id+'">\u00d7</button></div>'
     +'<div class="sec"><div class="sec-label">Biography</div>'
     +'<div class="bio-short">'+bio+'</div>'+bioT+'</div>'
-    +audioSec(p)+pptxSec(p)+extLinksHTML(p)+'</div>';
+    +audioSec(p)+timelineSec(p)+videoSec(p)+extLinksHTML(p)+'</div>';
 }
 
 function audioSec(p){
-  var hS=!!p.audio_short_url,hE=!!p.audio_extended_url;
-  if(!hS&&!hE)return'<div class="sec"><div class="sec-label">Audio Descriptions</div><div class="placeholder-block"><p>Audio description in production &mdash; check back soon.</p></div></div>';
-  return'<div class="sec"><div class="sec-label">Audio Descriptions</div>'
-    +(hS?audioPlayer("short",p.id,p.audio_short_url,p.audio_short_duration,p.audio_short_description,"Short Version"):'<div class="placeholder-block"><p>Short audio coming soon.</p></div>')
-    +(hE?audioPlayer("ext",p.id,p.audio_extended_url,p.audio_extended_duration,p.audio_extended_description,"Extended Version"):'<div class="placeholder-block"><p>Extended audio coming soon.</p></div>')
+  if(!p.audio_short_url)return'<div class="sec"><div class="sec-label">Audio Description</div><div class="placeholder-block"><p>Audio description in production &mdash; check back soon.</p></div></div>';
+  return'<div class="sec"><div class="sec-label">Audio Description</div>'
+    +audioPlayer("short",p.id,p.audio_short_url,p.audio_short_duration,p.audio_short_description,"Short Version")
     +'</div>';
 }
 
@@ -341,23 +341,45 @@ function audioPlayer(type,pid,url,dur,desc,label){
     +'</div>';
 }
 
-function pptxSec(p){
-  if(!p.pptx_view_url)return'<div class="sec"><div class="sec-label">Animated Presentation</div><div class="placeholder-block"><p>Presentation in production.</p></div></div>';
+function timelineSec(p){
+  if(!p.pptx_view_url)return'<div class="sec"><div class="sec-label">Illustrated Timeline</div><div class="placeholder-block"><p>Illustrated timeline in production.</p></div></div>';
   var th=p.pptx_thumbnail_url?'<img src="'+esc(p.pptx_thumbnail_url)+'" alt="">':'&#128202;';
-  return'<div class="sec"><div class="sec-label">Animated Presentation</div>'
+  return'<div class="sec"><div class="sec-label">Illustrated Timeline</div>'
     +'<div class="pptx-block"><div class="pptx-thumb">'+th+'</div>'
-    +'<div class="pptx-info"><div class="pptx-title-t">'+(p.pptx_title||"Presentation")+'</div>'
+    +'<div class="pptx-info"><div class="pptx-title-t">'+(p.pptx_title||"Illustrated Timeline")+'</div>'
     +(p.pptx_slide_count?'<div class="pptx-meta">'+p.pptx_slide_count+' slides</div>':"")
-    +'<div class="pptx-links"><a href="'+esc(p.pptx_view_url)+'" target="_blank" rel="noopener" class="pptx-link">View &#8599;</a>'
-    +(p.pptx_download_url?'<a href="'+esc(p.pptx_download_url)+'" download class="pptx-link">Download .pptx &#8595;</a>':"")
+    +'<div class="pptx-links">'
+    +'<a href="'+esc(p.pptx_view_url)+'" target="_blank" rel="noopener" class="pptx-link">View &#8599;</a>'
+    +(p.pptx_download_url?'<a href="'+esc(p.pptx_download_url)+'" target="_blank" rel="noopener" class="pptx-link">Download &#8595;</a>':"")
     +'</div></div></div></div>';
+}
+
+function ytId(url){
+  if(!url)return null;
+  var m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/);
+  return m?m[1]:null;
+}
+
+function videoSec(p){
+  if(!p.youtube_url)return'<div class="sec"><div class="sec-label">Animated Presentation</div><div class="placeholder-block"><p>Animated presentation in production.</p></div></div>';
+  var yid=ytId(p.youtube_url);
+  if(yid){
+    return'<div class="sec"><div class="sec-label">Animated Presentation</div>'
+      +'<div class="video-wrap">'
+      +'<iframe src="https://www.youtube.com/embed/'+yid+'" title="Animated Presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+      +'</div></div>';
+  }
+  // Fallback: linked button for non-YouTube URLs
+  return'<div class="sec"><div class="sec-label">Animated Presentation</div>'
+    +'<div class="placeholder-block"><a href="'+esc(p.youtube_url)+'" target="_blank" rel="noopener" class="pptx-link" style="font-size:13px">Watch Presentation &#8599;</a></div></div>';
 }
 
 function extLinksHTML(p){
   if(!p.wikipedia_url&&!p.youtube_url)return"";
+  var yid=ytId(p.youtube_url);
   var h='<div class="sec"><div class="sec-label">External References</div><div class="ext-links">';
   if(p.wikipedia_url)h+='<a href="'+esc(p.wikipedia_url)+'" target="_blank" rel="noopener" class="ext-link"><svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>Wikipedia &mdash; '+esc(p.full_name)+'</a>';
-  if(p.youtube_url)h+='<a href="'+esc(p.youtube_url)+'" target="_blank" rel="noopener" class="ext-link"><svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>YouTube &mdash; Video Documentary</a>';
+  if(p.youtube_url&&yid)h+='<a href="'+esc(p.youtube_url)+'" target="_blank" rel="noopener" class="ext-link"><svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>YouTube &mdash; Animated Presentation</a>';
   return h+'</div></div>';
 }
 
@@ -467,13 +489,4 @@ function reveal(){
 
 fetch("people.json")
   .then(function(r){
-    if(!r.ok)throw new Error("HTTP "+r.status);
-    return r.json();
-  })
-  .then(function(data){init(data);})
-  .catch(function(err){
-    document.getElementById("grid").innerHTML='<p class="no-results">Error loading data: '+err.message+'</p>';
-  });
-</script>
-</body>
-</html>
+    if(!r.ok)throw new Erro
